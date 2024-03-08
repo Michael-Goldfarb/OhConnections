@@ -1,0 +1,9 @@
+.logo-container {
+  margin-left: 0px;
+}
+
+.main-logo {
+  height: 90px;
+  width: 150px;
+  transform: translate(0px);
+}
