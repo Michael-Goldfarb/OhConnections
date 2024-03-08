@@ -13,6 +13,7 @@ const ConnectionsPage = () => {
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
+  const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [userWon, setUserWon] = useState(false);
   const [moveHistory, setMoveHistory] = useState([]);
   const [gameOver, setGameOver] = useState(false);
@@ -87,16 +88,13 @@ const ConnectionsPage = () => {
     } else {
       const oneAway = correctGroups.some(group => {
         const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
-        // If 3 terms match, and the selected group is not exactly the correct group, it's "one away"
         return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
       });
 
       const guessColors = currentSetSorted.map(term => {
         const group = correctGroups.find(group => group.terms.includes(term));
-        return group ? group.color : '#FFFFFF'; // Fallback color, you can remove this if all terms will have a group
       });
     
-      // Record the move with the colors for each term
       setMoveHistory(prevHistory => [
         ...prevHistory,
         guessColors
@@ -134,7 +132,7 @@ const ConnectionsPage = () => {
           setUserWon(false);
           setShowPopup(true);
           setTimeout(() => {
-            setShowPopup(false); // Ensure popup is hidden before revealing groups
+            setShowPopup(false);
     
             const remainingGroups = correctGroups.filter(group => 
                 !guessedGroups.some(guessedGroup => 
@@ -143,10 +141,10 @@ const ConnectionsPage = () => {
             );
     
             setRemainingGroupsToReveal(remainingGroups);
-            setGameOver(true); // Mark the game as over
+            setGameOver(true);
             setSelectedTerms([]);
-            setMistakes(0); // Ensuring no more actions can be taken
-        }, 2000); // Match this with the popup timeout
+            setMistakes(0);
+        }, 2000);
         return;
         }
       }
@@ -156,15 +154,14 @@ const ConnectionsPage = () => {
 
   useEffect(() => {
     if (gameOver && remainingGroupsToReveal.length > 0) {
-      // Reveal the first group in the list after a delay
       const timer = setTimeout(() => {
-        const [groupToReveal, ...restGroups] = remainingGroupsToReveal; // Destructure to get the first group and the rest
-      setGuessedGroups(prevGuessedGroups => [...prevGuessedGroups, groupToReveal]); // Add it to guessedGroups
-      setTerms(terms => terms.filter(term => !groupToReveal.terms.includes(term))); // Remove guessed terms from the terms array
-      setRemainingGroupsToReveal(restGroups); // Update to the rest of the groups
+        const [groupToReveal, ...restGroups] = remainingGroupsToReveal;
+      setGuessedGroups(prevGuessedGroups => [...prevGuessedGroups, groupToReveal]);
+      setTerms(terms => terms.filter(term => !groupToReveal.terms.includes(term)));
+      setRemainingGroupsToReveal(restGroups);
     }, 1000);
   
-      return () => clearTimeout(timer); // Cleanup the timer
+      return () => clearTimeout(timer);
     }
   }, [remainingGroupsToReveal, gameOver, terms]);
   
@@ -174,25 +171,16 @@ const ConnectionsPage = () => {
     setTerms(shuffledTermsArray);
   };
 
-  // A simple shuffle function for the terms
   const shuffleArray = (array) => {
     let currentIndex = array.length,  randomIndex;
-
-    // While there remain elements to shuffle...
     while (currentIndex !== 0) {
-
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-
-      // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-
     return array;
   };
-
   const shuffledTermsArray = shuffleArray([...terms]);
 
   const difficultyLevels = [
@@ -254,9 +242,6 @@ const ConnectionsPage = () => {
     );
   };
 
-  
-
-
   const handleCopySummary = () => {
     // Generate the game summary string from the move history
     const summaryString = moveHistory.map(moveRow => 
@@ -289,12 +274,30 @@ const ConnectionsPage = () => {
   };
   
   
+  const renderHowToPlayPopup = () => {
+    if (!showHowToPlay) return null;
+  
+    return (
+      <div className="how-to-play-popup" onClick={() => setShowHowToPlay(false)}>
+        <div className="how-to-play-content" onClick={e => e.stopPropagation()}>
+          <button className="close-button" onClick={() => setShowHowToPlay(false)}>X</button>
+          <h2>How to Play</h2>
+          {/* Add your detailed instructions here */}
+          <p>Here you will add the instructions on how to play the game.</p>
+        </div>
+      </div>
+    );
+  };
   
   
 
   return (
     <div className="connections-game">
-    <h1>Create four groups of four!</h1>
+    <div className="header-container">
+      <div className="button-placeholder"></div> {/* Invisible placeholder */}
+      <h1>Create four groups of four!</h1>
+      <button className="game-controls button how-to-play-button" onClick={() => setShowHowToPlay(true)}>How to Play</button>
+    </div>
     {showPopup && <div className="popup-message">{popupMessage}</div>} {/* Move this above the .guessed-groups and .terms-grid */}
     <div className="guessed-groups">
       {guessedGroups.map((group, index) => (
@@ -336,7 +339,7 @@ const ConnectionsPage = () => {
         <button className="game-button" onClick={() => setShowResultsPopup(true)}>View Results</button>
       </div>
     )}
-    {showResultsPopup && renderResultsPopup()}
+    {showResultsPopup && renderResultsPopup() && renderHowToPlayPopup()}
   </div>
 );
 
