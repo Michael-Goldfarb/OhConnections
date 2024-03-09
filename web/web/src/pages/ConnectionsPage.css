@@ -349,23 +349,26 @@ h1 {
   font-family: 'Arial', sans-serif;
 }
 
+.how-to-play-content p {
+  line-height: 2.6;
+}
+
 .example-section {
-  margin: 20px 0; /* Add space above and below the example section */
+  margin: 20px 0;
 }
 
 .example-group {
-  margin-bottom: 10px; /* Space between the examples */
+  margin-bottom: 20px 0;
 }
 
 .player-images {
-  display: flex;       /* Aligns children in a row */
-  justify-content: center; /* Centers children along the main axis */
-  flex-wrap: wrap;     /* Allows items to wrap onto multiple lines if needed */
-  gap: 10px;           /* Adds a gap between the items */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .player-images img {
-  width: 80px;  /* Set a fixed width for each image */
-  height: auto; /* Maintains the aspect ratio of the images */
-  /* Add any additional styling such as border, etc. */
+  width: 80px;
+  height: auto;
 }
