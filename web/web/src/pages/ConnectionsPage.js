@@ -91,8 +91,9 @@ const ConnectionsPage = () => {
         return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
       });
 
-      const guessColors = currentSetSorted.map(term => {
+      const guessColors = selectedTerms.map(term => {
         const group = correctGroups.find(group => group.terms.includes(term));
+        return group ? group.color : '#FFFFFF';
       });
     
       setMoveHistory(prevHistory => [
@@ -227,13 +228,14 @@ const ConnectionsPage = () => {
             ))}
           </div>
           <div className="game-summary-grid">
-            {moveHistory.map((moveRow, index) => (
-              <div key={index} className="summary-row">
-                {moveRow.map((color, colorIndex) => (
-                  <div key={colorIndex} className="summary-block" style={{ backgroundColor: color }}></div>
-                ))}
-              </div>
-            ))}
+          {moveHistory.map((colorSet, index) => (
+  <div key={index} className="summary-row">
+    {colorSet.map((color, colorIndex) => (
+      <div key={colorIndex} className="summary-block" style={{ backgroundColor: color }}></div>
+    ))}
+  </div>
+))}
+
           </div>
           <p className="next-puzzle-countdown">NEXT BOARD IN: {nextPuzzleCountdown}</p>
           <button className="copy-summary-button" onClick={handleCopySummary}>Share Results</button>
@@ -243,28 +245,23 @@ const ConnectionsPage = () => {
   };
 
   const handleCopySummary = () => {
-    // Generate the game summary string from the move history
     const summaryString = moveHistory.map(moveRow => 
       moveRow.map(color => {
-        // You will need to convert the color to the corresponding emoji or text representation
-        // This is an example; you will need to map your actual colors to the desired output
         switch (color) {
           case correctGroups[0].color: return '🟩';
           case correctGroups[1].color: return '🟨';
           case correctGroups[2].color: return '🟧';
           case correctGroups[3].color: return '🟥';
-          default: return '⬜️'; // Default for incorrect guesses or unmatched terms
+          default: return '⬜️';
         }
       }).join('')
     ).join('\n');
   
-    // Use nextPuzzleCountdown for the NEXT PUZZLE IN part
     const legend = `\n\n🟩 = Easy\n🟨 = Medium\n🟧 = Hard\n🟥 = Impossible`;
 
     const completeSummary = `OhConnections\nBoard #${correctGroups[0].number}\n\n${summaryString}${legend}\n\nNEXT PUZZLE IN: ${nextPuzzleCountdown}\n\nwww.ohconnections.com`;
     
     navigator.clipboard.writeText(completeSummary).then(() => {
-      // Notify the user that the summary was copied, if needed.
       setPopupMessage('Game summary copied to clipboard!');
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 2000);
@@ -281,24 +278,47 @@ const ConnectionsPage = () => {
       <div className="how-to-play-popup" onClick={() => setShowHowToPlay(false)}>
         <div className="how-to-play-content" onClick={e => e.stopPropagation()}>
           <button className="close-button" onClick={() => setShowHowToPlay(false)}>X</button>
-          <h2>How to Play</h2>
-          {/* Add your detailed instructions here */}
-          <p>Here you will add the instructions on how to play the game.</p>
+          <h1>How to play</h1>
+          <p>Goal: Find groups of four MLB players that share a similarity.</p>
+          <div className="example-section">
+            <p>Example:</p>
+            <div className="example-group">
+              <p>CURRENT DODGERS PLAYERS</p>
+              {/* Include player images here */}
+            </div>
+            <div className="example-group">
+              <p>PLAYERS BORN IN VENEZUELA</p>
+              {/* Include player images here */}
+            </div>
+          </div>
+          <p>Select the four players and tap Submit to check if your guess is correct.</p>
+          <p>You have four chances to get the right groups.</p>
+          <p>Each group is represented by a color: </p>
+          <div className="difficulty-container">
+          {difficultyLevels.map(level => (
+            <div key={level.name} className="difficulty-level">
+              <span className="difficulty-color" style={{ backgroundColor: level.color }}></span>
+              <span className="difficulty-name">{level.name}</span>
+            </div>
+          ))}
+        </div>
+          <p>Good Luck!</p>
         </div>
       </div>
     );
   };
   
   
+  
 
   return (
     <div className="connections-game">
     <div className="header-container">
-      <div className="button-placeholder"></div> {/* Invisible placeholder */}
+      <div className="button-placeholder"></div>
       <h1>Create four groups of four!</h1>
       <button className="game-controls button how-to-play-button" onClick={() => setShowHowToPlay(true)}>How to Play</button>
     </div>
-    {showPopup && <div className="popup-message">{popupMessage}</div>} {/* Move this above the .guessed-groups and .terms-grid */}
+    {showPopup && <div className="popup-message">{popupMessage}</div>}
     <div className="guessed-groups">
       {guessedGroups.map((group, index) => (
         <div 
@@ -339,7 +359,8 @@ const ConnectionsPage = () => {
         <button className="game-button" onClick={() => setShowResultsPopup(true)}>View Results</button>
       </div>
     )}
-    {showResultsPopup && renderResultsPopup() && renderHowToPlayPopup()}
+    {showResultsPopup && renderResultsPopup()}
+    {renderHowToPlayPopup()}
   </div>
 );
 
