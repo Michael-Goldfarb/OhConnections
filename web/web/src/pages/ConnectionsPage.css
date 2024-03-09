@@ -65,7 +65,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px; /* increase this to allow for more space on bottom of page */
+  margin-bottom: 20px;
 }
 
 .game-controls button {

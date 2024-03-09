@@ -20,6 +20,7 @@ const ConnectionsPage = () => {
   
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
+  const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [userWon, setUserWon] = useState(false);
@@ -66,6 +67,7 @@ const ConnectionsPage = () => {
   // }, [guessedGroups]);
 
   const handleTermClick = (term) => {
+    if (gameOver) return;
     if (selectedTerms.includes(term)) {
       setSelectedTerms(selectedTerms.filter(t => t !== term));
       setShowPopup(false);
@@ -132,12 +134,15 @@ const ConnectionsPage = () => {
         if (updatedGuessedGroups.length === correctGroups.length) {
           setGameOver(true);
           setUserWon(true);
-          setShowResultsPopup(true);
+          setTimeout(() => {
+            setShowResultsPopup(true);
+        }, 1000);
         }
       } else {
         setSubmittedSets([...submittedSets, currentSetString]);
         setMistakes(mistakes - 1);
         if (mistakes <= 1) {
+          setGameOver(true);
           setPopupMessage("Nice try!");
           setUserWon(false);
           setShowPopup(true);
@@ -151,7 +156,7 @@ const ConnectionsPage = () => {
             );
     
             setRemainingGroupsToReveal(remainingGroups);
-            setGameOver(true);
+            setReadyToShowPopUp(true);
             setSelectedTerms([]);
             setMistakes(0);
         }, 2000);
@@ -176,13 +181,13 @@ const ConnectionsPage = () => {
   }, [remainingGroupsToReveal, gameOver, terms]);
 
   useEffect(() => {
-    if (gameOver && remainingGroupsToReveal.length === 0) {
+    if (gameOver && readyToShowPopUp && remainingGroupsToReveal.length === 0) {
       const timer = setTimeout(() => {
         setShowResultsPopup(true);
       }, 1700);
       return () => clearTimeout(timer);      
     }
-  }, [remainingGroupsToReveal, gameOver]);
+  }, [remainingGroupsToReveal, gameOver, readyToShowPopUp]);
   
   
   const handleShuffle = () => {
