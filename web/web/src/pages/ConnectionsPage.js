@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import './ConnectionsPage.css';
 import baseballImg from '../images/baseball.png';
 import freddieFreeman from '../images/examples/freddiefreeman.png';
@@ -20,6 +20,8 @@ const ConnectionsPage = () => {
   
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
+  const [width, height] = useWindowSize();
+  console.log(width, height);
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [showHowToPlay, setShowHowToPlay] = useState(false);
@@ -167,6 +169,20 @@ const ConnectionsPage = () => {
   };
   
 
+  function useWindowSize() {
+    const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setSize([window.innerWidth, window.innerHeight]);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return size;
+  }
+  
   useEffect(() => {
     if (gameOver && remainingGroupsToReveal.length > 0) {
       const timer = setTimeout(() => {
@@ -363,13 +379,13 @@ const ConnectionsPage = () => {
         </div>
       ))}
     </div>
-    <div className="terms-grid">
-      {terms.map((term, index) => (
-        <div key={index} className={`term-block ${selectedTerms.includes(term) ? 'selected' : ''}`} onClick={() => handleTermClick(term)}>
-          {term}
-        </div>
-      ))}
+    <div className="terms-grid" style={{ gridTemplateColumns: width > 0 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)' }}>
+  {terms.map((term, index) => (
+    <div key={index} className={`term-block ${selectedTerms.includes(term) ? 'selected' : ''}`} onClick={() => handleTermClick(term)}>
+      {term}
     </div>
+  ))}
+</div>
     {!gameOver && (
       <div className="mistakes-section">
         <div className="mistakes-indicator">
