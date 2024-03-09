@@ -404,7 +404,7 @@ h1 {
 
   .connections-game {
     position: relative;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
     padding:  5.2356020942408374vw;
     text-align: center;
@@ -412,7 +412,7 @@ h1 {
   }
   
   h1 {
-    font-size: 15px;
+    font-size: 20px;
     margin-top: -20px;
     margin-bottom: 60px;
   }
@@ -422,7 +422,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
     min-width: 0;
   }
   
@@ -430,8 +430,8 @@ h1 {
     background: #ffffff;
     border: 1px solid #ddd;
     padding: 10px; 
-    width: 60px; 
-    height: 60px; 
+    width: 80px; 
+    height: 80px; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -445,7 +445,7 @@ h1 {
   .mistakes-section {
     text-align: center;
     font-size: 10px;
-    margin-bottom: 15px; 
+    margin-bottom: 45px; 
   }
   
   .game-controls {
@@ -658,6 +658,38 @@ h1 {
     margin-bottom: 15px;
     font-weight: 500;
   }
+
+  .how-to-play-content {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 600px;
+  }
+  
+  .how-to-play-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: -30px;
+    transition: background-color 0.3s;
+    height: 40px; 
+    width: 90px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  
+  .button-placeholder {
+    visibility: hidden;
+    width: 16.5px;
+    height: -50px;
+  }
   
   .header-container {
     display: flex;
@@ -676,8 +708,8 @@ h1 {
 
   .how-to-play-popup {
     position: relative;
-    top: -510px;
-    left: -35px;
+    top: -650px;
+    left: -55px;
     width: 130%;
     height: 30%;
     display: flex;
