@@ -287,7 +287,7 @@ const ConnectionsPage = () => {
         <div className="how-to-play-content" onClick={e => e.stopPropagation()}>
           <button className="close-button" onClick={() => setShowHowToPlay(false)}>X</button>
           <h1>How to Play</h1>
-          <p>Goal: Find groups of four MLB players that share a similarity</p>
+          <p>Goal: Find groups of four MLB players that have something in common</p>
           <div className="example-section">
             <p>Example:</p>
             <div className="example-group">
@@ -309,8 +309,8 @@ const ConnectionsPage = () => {
             </div>
             </div>
           </div>
-          <p>Select the four players and tap Submit to check if your guess is correct</p>
-          <p>You have four chances to get the right groups</p>
+          <p>Select four similar players and tap 'Submit' to check if you are correct</p>
+          <p>You have four incorrect guesses before the game ends</p>
           <p>Each group is represented by a color: </p>
           <div className="difficulty-container">
           {difficultyLevels.map(level => (

@@ -346,19 +346,26 @@ h1 {
 
 .how-to-play-content {
   text-align: center;
+  position: relative;
   font-family: 'Arial', sans-serif;
 }
 
 .how-to-play-content p {
   line-height: 2.6;
+  font-weight: 500;
+}
+
+.how-to-play-content h1 {
+  margin-top: -10px;
+  font-weight: bold;
 }
 
 .example-section {
-  margin: 20px 0;
+  margin: 18px 0;
 }
 
 .example-group {
-  margin-bottom: 20px 0;
+  margin-bottom: 30px;
 }
 
 .player-images {
