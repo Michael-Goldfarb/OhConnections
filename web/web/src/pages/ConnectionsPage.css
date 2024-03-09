@@ -256,7 +256,6 @@ h1 {
   width: 40px;
   height: 40px;
   margin: 2px;
-  display: inline-block;
 }
 
 .next-puzzle-countdown {
@@ -356,4 +355,17 @@ h1 {
 
 .example-group {
   margin-bottom: 10px; /* Space between the examples */
+}
+
+.player-images {
+  display: flex;       /* Aligns children in a row */
+  justify-content: center; /* Centers children along the main axis */
+  flex-wrap: wrap;     /* Allows items to wrap onto multiple lines if needed */
+  gap: 10px;           /* Adds a gap between the items */
+}
+
+.player-images img {
+  width: 80px;  /* Set a fixed width for each image */
+  height: auto; /* Maintains the aspect ratio of the images */
+  /* Add any additional styling such as border, etc. */
 }

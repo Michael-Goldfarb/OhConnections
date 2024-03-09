@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './ConnectionsPage.css';
 import baseballImg from '../images/baseball.png';
+import freddieFreeman from '../images/examples/freddiefreeman.png';
+import mookieBetts from '../images/examples/mookiebetts.png';
+import shoheiOhtani from '../images/examples/shoheiohtani.png';
+import maxMuncy from '../images/examples/maxmuncy.png';
+import joseAltuve from '../images/examples/josealtuve.png';
+import miguelCabrera from '../images/examples/miguelcabrera.png';
+import ronaldAcunaJr from '../images/examples/ronaldacunajr.png';
+import salvadorPerez from '../images/examples/salvadorperez.png';
 
 const ConnectionsPage = () => {
   const initialTerms = ['Brook Lopez', 'Seth Curry', 'Jrue Holiday', 'Franz Wagner', 'Nikola Jokic', 'Shai Gilgeous-Alexander', 'Kevin Durant', 'Luka Doncic', 'Steve Kerr', 'Jason Kidd', 'Tyronn Lue', 'Steve Nash', 'Rasheed Wallace', 'Gary Payton', 'Charles Barkley', 'Karl Malone'];
@@ -278,21 +286,31 @@ const ConnectionsPage = () => {
       <div className="how-to-play-popup" onClick={() => setShowHowToPlay(false)}>
         <div className="how-to-play-content" onClick={e => e.stopPropagation()}>
           <button className="close-button" onClick={() => setShowHowToPlay(false)}>X</button>
-          <h1>How to play</h1>
-          <p>Goal: Find groups of four MLB players that share a similarity.</p>
+          <h1>How to Play</h1>
+          <p>Goal: Find groups of four MLB players that share a similarity</p>
           <div className="example-section">
             <p>Example:</p>
             <div className="example-group">
               <p>CURRENT DODGERS PLAYERS</p>
-              {/* Include player images here */}
+              <div className="player-images">
+                <img src={freddieFreeman} alt="Freddie Freeman" />
+                <img src={mookieBetts} alt="Mookie Betts" />
+                <img src={shoheiOhtani} alt="Shohei Ohtani" />
+                <img src={maxMuncy} alt="Max Muncy" />
+            </div>
             </div>
             <div className="example-group">
               <p>PLAYERS BORN IN VENEZUELA</p>
-              {/* Include player images here */}
+              <div className="player-images">
+                <img src={joseAltuve} alt="Jose Altuve" />
+                <img src={ronaldAcunaJr} alt="Ronald Acuña Jr" />
+                <img src={miguelCabrera} alt="Miguel Cabrera" />
+                <img src={salvadorPerez} alt="Salvador Perez" />
+            </div>
             </div>
           </div>
-          <p>Select the four players and tap Submit to check if your guess is correct.</p>
-          <p>You have four chances to get the right groups.</p>
+          <p>Select the four players and tap Submit to check if your guess is correct</p>
+          <p>You have four chances to get the right groups</p>
           <p>Each group is represented by a color: </p>
           <div className="difficulty-container">
           {difficultyLevels.map(level => (
