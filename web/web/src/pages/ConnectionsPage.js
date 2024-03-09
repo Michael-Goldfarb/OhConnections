@@ -132,6 +132,7 @@ const ConnectionsPage = () => {
         if (updatedGuessedGroups.length === correctGroups.length) {
           setGameOver(true);
           setUserWon(true);
+          setShowResultsPopup(true);
         }
       } else {
         setSubmittedSets([...submittedSets, currentSetString]);
@@ -173,6 +174,15 @@ const ConnectionsPage = () => {
       return () => clearTimeout(timer);
     }
   }, [remainingGroupsToReveal, gameOver, terms]);
+
+  useEffect(() => {
+    if (gameOver && remainingGroupsToReveal.length === 0) {
+      const timer = setTimeout(() => {
+        setShowResultsPopup(true);
+      }, 1700);
+      return () => clearTimeout(timer);      
+    }
+  }, [remainingGroupsToReveal, gameOver]);
   
   
   const handleShuffle = () => {
@@ -320,7 +330,6 @@ const ConnectionsPage = () => {
             </div>
           ))}
         </div>
-          <p>Good Luck!</p>
         </div>
       </div>
     );
