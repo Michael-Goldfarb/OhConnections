@@ -1543,3 +1543,63 @@ h1 {
     height: auto;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-height: 500px) and (min-width: 601px) {
+  body, html {
+    overflow-y: auto;
+  }
+  
+  .connections-game {
+    width: 70vh;
+    padding: 2.5380710659898478vh;
+  }
+  
+  h1 {
+    font-size: 2.845685279187817vh;
+    margin-top: -2.5380710659898478vh;
+    width: 100%;
+    margin-bottom: 2.5380710659898478vh;
+  }
+  
+  .terms-grid {
+    gap: 1vh;
+    margin-bottom: 1.2vh;
+  }
+  
+  .term-block {
+    height: 15vh;
+    width: 15vh;
+  }
+  
+  .mistakes-section {
+    text-align: center;
+    font-size: 2.15vh;
+    margin-bottom: 1.2vh; 
+  }
+
+  .game-controls button {
+    margin-bottom: 10vh;
+  }
+  
+  .guessed-group-combined {
+    height: 15vh;
+  }
+
+}
