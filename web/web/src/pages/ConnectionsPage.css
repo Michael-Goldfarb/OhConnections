@@ -1325,13 +1325,13 @@ h1 {
     position: relative;
     background: #fff;
     color: #333;
-    padding: 40px;
-    border-radius: 8px;
+    padding: 4vh;
+    border-radius: 1vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 25%;
-    max-width: 1200px;
-    min-height: 200px;
-    max-height: 800px;
+    max-width: 152.28426395939087vh;
+    min-height: 25.380710659898476vh;
+    max-height: 101.5228426395939vh;
     overflow-y: auto;
   }
   
@@ -1359,24 +1359,25 @@ h1 {
     border-radius: 1.5vh;
     margin-right: 1vh;
     transition: background-color 0.3s;
-    height: 40px;
-    width: 200px;
+    height: 5.738880918220947vh;
+    width: 28.694404591104735vh;
     box-sizing: border-box;
-    font-size: 14px;
-    margin-bottom: 40px;
-    margin-bottom: 35px;
+    font-size: 1.7vh;
+    margin-bottom: 5.738880918220947vh;
+    margin-bottom: 5.338880918220947vh;
   }
   
   .copy-summary-button {
-    padding: 10px 20px;
-    margin-top: 25px;
+    padding: 1vh 2vh;
+    margin-top: 2vh;
     margin-bottom: -1rem;
     cursor: pointer;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: .3vh;
     transition: background-color 0.3s;
+    font-size: 2vh;
   }
   
   .copy-summary-button:hover {
@@ -1398,14 +1399,14 @@ h1 {
   }
   
   .difficulty-color {
-    width: 2vh;
-    height: 2vh;
+    width: 1.9vh;
+    height: 1.9vh;
     margin-right: 8px;
   }
   
   .difficulty-name {
     font-size: 1.5vh;
-    min-width: 80px;
+    min-width: 10.152284263959391vh;
     font-weight: 500;
     text-align: left;
   }
@@ -1414,7 +1415,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 2vh;
   }
   
   .summary-row {
@@ -1422,29 +1423,29 @@ h1 {
   }
   
   .summary-block {
-    width: 35px;
-    height: 35px;
+    width: 4.441624365482234vh;
+    height: 4.441624365482234vh;
     margin: 2px;
   }
   
   .next-puzzle-countdown {
     margin-top: 2.0rem;
     color: #333;
-    font-size: 19px;
+    font-size: 2.4vh;
     font-weight: 500;
   }
   
   .message-header {
-    font-size: 26px;
+    font-size: 3.3vh;
     font-weight: 800;
-    margin-top: -30px;
+    margin-top: -4vh;
     margin-bottom: 0px;
   }
   
   .game-number {
-    font-size: 16px;
-    margin-top: -15px;
-    margin-bottom: 15px;
+    font-size: 2vh;
+    margin-top: -1.9vh;
+    margin-bottom: 1.9vh;
     font-weight: 500;
   }
   
