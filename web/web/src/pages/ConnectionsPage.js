@@ -68,6 +68,16 @@ const ConnectionsPage = () => {
   //   localStorage.setItem('guessedGroups', JSON.stringify(guessedGroups));
   // }, [guessedGroups]);
 
+  const getVictoryMessage = (mistakesLeft) => {
+    switch(mistakesLeft) {
+      case 4: return "Perfect!";
+      case 3: return "Great Job!";
+      case 2: return "Solid!";
+      case 1: return "Phew!";
+      default: return "Good Job!";
+    }
+  };
+  
   const handleTermClick = (term) => {
     if (gameOver) return;
     if (selectedTerms.includes(term)) {
@@ -136,6 +146,9 @@ const ConnectionsPage = () => {
         if (updatedGuessedGroups.length === correctGroups.length) {
           setGameOver(true);
           setUserWon(true);
+          setPopupMessage(getVictoryMessage(mistakes));
+          setShowPopup(true);
+          setTimeout(() => setShowPopup(false), 1000);
           setTimeout(() => {
             setShowResultsPopup(true);
         }, 1000);
@@ -250,7 +263,7 @@ const ConnectionsPage = () => {
 
   
   const renderResultsPopup = () => {
-    const message = userWon ? "Good Job!" : "Next Time!";
+    const message = userWon ? getVictoryMessage(mistakes) : "Next Time!";
     
     return (
       <div className="results-popup" onClick={() => setShowResultsPopup(false)}>
@@ -380,12 +393,22 @@ const ConnectionsPage = () => {
       ))}
     </div>
     <div className="terms-grid" style={{ gridTemplateColumns: width > 0 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)' }}>
-  {terms.map((term, index) => (
-    <div key={index} className={`term-block ${selectedTerms.includes(term) ? 'selected' : ''}`} onClick={() => handleTermClick(term)}>
-      {term}
-    </div>
-  ))}
+  {terms.map((term, index) => {
+    let imgSrc = '';
+    switch (term) {
+      case 'Brook Lopez': imgSrc = baseballImg; break;
+      default: imgSrc = miguelCabrera;
+    }
+
+    return (
+      <div key={index} className={`term-block ${selectedTerms.includes(term) ? 'selected' : ''}`} onClick={() => handleTermClick(term)}>
+        <img src={imgSrc} className="term-image" alt={term} />
+        <div className="text-overlay">{term}</div>
+      </div>
+    );
+  })}
 </div>
+
     {!gameOver && (
       <div className="mistakes-section">
         <div className="mistakes-indicator">
