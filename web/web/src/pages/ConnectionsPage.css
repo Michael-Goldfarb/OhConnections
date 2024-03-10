@@ -171,17 +171,18 @@ h1 {
 
 .group-images {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end; /* Align items to the bottom */
-  height: 100%; /* Take full height of the container */
-  margin-bottom: -20px; /* Pull the images down into the container */
+  justify-content: space-evenly;
+  align-items: flex-end;
+  height: 100%;
+  margin-bottom: -20px;
+  gap: 11px;
 }
 
 .player-image-container {
   position: relative;
-  width: 100px; /* Adjust width to fit four images in the container */
-  height: calc(100% - 10px); /* Adjust height for the text overlay */
-  margin-bottom: -10px; /* Pull the container down to overlap with the group description */
+  width: 100px;
+  height: calc(100% - 10px);
+  margin-bottom: -10px;
 }
 
 .guessed-player-image {
@@ -194,13 +195,14 @@ h1 {
 .player-name-overlay {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 2px 0; /* Small padding for the text */
-  background-color: rgba(0, 0, 0, 0.7);
+  left: -4px;
+  width: 110px;
+  padding: 2px 0;
+  background-color: #000;
   color: white;
   text-align: center;
-  font-size: 10px; /* Adjust for space */
+  font-size: 10px;
+  font-weight: 550;
   overflow: hidden;
 }
 

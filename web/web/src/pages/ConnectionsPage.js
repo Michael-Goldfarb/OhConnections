@@ -426,7 +426,7 @@ const ConnectionsPage = () => {
             {group.terms.map((term, termIndex) => (
               <div key={termIndex} className="player-image-container">
                 <img src={playerImages[term]} alt={term} className="guessed-player-image" />
-                <div className="player-name-overlay">{term}</div>
+                <div className="player-name-overlay">{term.toUpperCase()}</div>
               </div>
             ))}
           </div>
