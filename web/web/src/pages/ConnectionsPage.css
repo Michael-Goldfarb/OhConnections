@@ -1602,4 +1602,239 @@ h1 {
     height: 15vh;
   }
 
+  .player-images img {
+    width: 10.2vh;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-height: 800px) and (max-width: 600px) {
+
+  
+  .connections-game {
+    width: 50vh;
+    position: relative;
+    margin: 0 auto;
+    padding: 2.5380710659898478vh;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.445685279187817vh;
+    margin-top: .5380710659898478vh;
+    width: 100%;
+    margin-bottom: 4.5380710659898478vh;
+  }
+  
+  .terms-grid {
+    gap: 1vh;
+    margin-bottom: 2.6vh;
+  }
+  
+  .term-block {
+    aspect-ratio: 1 / 1;
+    height: 10.7vh;
+    width: 10.7vh;
+  }
+  
+  .term-block.selected {
+    background-color: #858585; 
+    transform: scale(1.01); 
+  }
+  
+  .mistakes-section {
+    font-size: 2.15vh;
+    margin-bottom: 2.6vh; 
+  }
+  
+  .game-controls {
+    margin-bottom: 2.5380710659898478vh;
+  }
+  
+  .game-controls button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 5vh; 
+    width: 25.380710659898478vh;
+    border-radius: 2.5380710659898478vh;;
+    font-size: 1.5380710659898478vh;
+    margin-bottom: 100vh;
+  }
+  
+  .baseball-icon {
+    width: 3.5vh;
+    margin-right: 4px;
+  }
+  
+  .popup-message {
+    top: 4.8%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: -3vh;
+    width: calc(150% - .8vh);
+    max-width: 350px;
+    height: 5vh;
+    font-size: 2vh
+  }
+  
+  .guessed-group-combined {
+    height: 10.7vh;
+    width: 102%;
+    padding: 2.1413276231263385vh;
+    margin-bottom: 1.1413276231263385vh;
+    border-radius: 1vh;
+  }
+  
+  .results-popup {
+    left: -150px;
+    width: 100;
+  }
+  
+  .results-content {
+    padding: 4vh;
+    border-radius: 1vh;
+    max-width: 152.28426395939087vh;
+    min-height: 25.380710659898476vh;
+    max-height: 101.5228426395939vh;
+  }
+  
+  .game-button {
+    padding: 1vh 2vh;
+    border-radius: 1.5vh;
+    margin-right: 1vh;
+    height: 5.738880918220947vh;
+    width: 28.694404591104735vh;
+    font-size: 1.7vh;
+    margin-bottom: 19.738880918220947vh;
+  }
+  
+  .copy-summary-button {
+    padding: 1vh 2vh;
+    margin-top: 2vh;
+    margin-bottom: -1rem;
+    border-radius: .3vh;
+    font-size: 2vh;
+  }
+  
+  .difficulty-level {
+    margin-bottom: 1vh;
+  }
+  
+  .difficulty-color {
+    width: 1.9vh;
+    height: 1.9vh;
+  }
+  
+  .difficulty-name {
+    font-size: 1.5vh;
+    min-width: 10.152284263959391vh;
+  }
+  
+  .game-summary-grid {
+    margin: 2vh;
+  }
+  
+  .summary-block {
+    width: 4.441624365482234vh;
+    height: 4.441624365482234vh;
+    margin: 2px;
+  }
+  
+  .next-puzzle-countdown {
+    margin-top: 2.0rem;
+    font-size: 2.4vh;
+  }
+  
+  .message-header {
+    font-size: 3.3vh;
+    margin-top: -4vh;
+    margin-bottom: 0px;
+  }
+  
+  .game-number {
+    font-size: 2vh;
+    margin-top: -1.9vh;
+    margin-bottom: 1.9vh;
+  }
+  
+  .header-container::before {
+    width: 46.5px;
+    height: -50px;
+  }
+
+  .how-to-play-content {
+    padding: 1.7vh;
+    max-width: 600px;
+    font-size: 1.5vh;
+  }
+  
+  .how-to-play-button {
+    padding: 1vh 2vh;
+    border-radius: 5px;
+    margin-top: -5vh;
+    height: 6vh; 
+    width: 10vh;
+    border-radius: 20px;
+    font-size: 1.55vh;
+  }
+  
+  .how-to-play-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  
+  .how-to-play-content p {
+    line-height: 3.5;
+    font-weight: 500;
+  }
+  
+  .how-to-play-content h1 {
+    margin-top: -1vh;
+  }
+  
+  .example-section {
+    margin: 14px 0;
+  }
+  
+  .example-group {
+    margin-bottom: 30px;
+  }
+  
+  .player-images {
+    gap: 1vh;
+  }
+  
+  .player-images img {
+    width: 10.2vh;
+  }
 }
