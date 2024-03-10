@@ -457,7 +457,7 @@ h1 {
   }
   
   .term-block {
-    background: #ffffff;
+    background: #cccccc;
     border: 1px solid #ddd;
     padding: 10px; 
     width: 85px; 
@@ -472,6 +472,10 @@ h1 {
     box-sizing: border-box;
   }
 
+  .text-overlay {
+    font-size: 1.1vh;
+  }
+  
   .mistakes-section {
     text-align: center;
     font-size: 10px;
@@ -849,7 +853,7 @@ h1 {
   }
   
   .term-block {
-    background: #ffffff;
+    background: #cccccc;
     border: 1px solid #ddd;
     padding: 10px; 
     width: 45px; 
@@ -862,6 +866,10 @@ h1 {
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 10px;
     box-sizing: border-box;
+  }
+
+  .text-overlay {
+    font-size: .6vh;
   }
 
   .mistakes-section {
@@ -1241,6 +1249,10 @@ h1 {
     aspect-ratio: 1 / 1;
     height: 16vh;
     width: 16vh;
+  }
+
+  .text-overlay {
+    font-size: 1.65vh;
   }
   
   .term-block.selected {
