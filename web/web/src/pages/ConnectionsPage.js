@@ -9,19 +9,35 @@ import joseAltuve from '../images/examples/josealtuve.png';
 import miguelCabrera from '../images/examples/miguelcabrera.png';
 import ronaldAcunaJr from '../images/examples/ronaldacunajr.png';
 import salvadorPerez from '../images/examples/salvadorperez.png';
+import albertPujols from './inputs/03-15-2024/albertPujols.png';
+import babeRuth from './inputs/03-15-2024/babeRuth.jpg';
+import hankAaron from './inputs/03-15-2024/hankAaron.jpg';
+import barryBonds from './inputs/03-15-2024/barryBonds.jpg';
+import fernandoTatisJr from './inputs/03-15-2024/fernandoTatisJr.png';
+import cavanBiggio from './inputs/03-15-2024/cavanBiggio.png';
+import boBichette from './inputs/03-15-2024/boBichette.png';
+import kebryanHayes from './inputs/03-15-2024/kebryanHayes.png';
+import aaronJudge from './inputs/03-15-2024/aaronJudge.png';
+import nolanArenado from './inputs/03-15-2024/nolanArenado.png';
+import adamJones from './inputs/03-15-2024/adamJones.png';
+import christianYelich from './inputs/03-15-2024/christianYelich.png';
+import ericHosmer from './inputs/03-15-2024/ericHosmer.png';
+
+
+
 
 const ConnectionsPage = () => {
-  const initialTerms = ['Brook Lopez', 'Seth Curry', 'Jrue Holiday', 'Franz Wagner', 'Nikola Jokic', 'Shai Gilgeous-Alexander', 'Kevin Durant', 'Luka Doncic', 'Steve Kerr', 'Jason Kidd', 'Tyronn Lue', 'Steve Nash', 'Rasheed Wallace', 'Gary Payton', 'Charles Barkley', 'Karl Malone'];
+  const initialTerms = ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds', 'Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman', 'Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette', 'Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'];
   const correctGroups = [
-    { number: 1, description: 'Most Technical Fouls', terms: ['Rasheed Wallace', 'Gary Payton', 'Charles Barkley', 'Karl Malone'],  color: '#4CAF50' },
-    { number: 1, description: 'NBA Players Turned Coaches', terms: ['Steve Kerr', 'Jason Kidd', 'Tyronn Lue', 'Steve Nash'],  color: '#e5de00' },
-    { number: 1, description: 'All Star Starters', terms: ['Nikola Jokic', 'Shai Gilgeous-Alexander', 'Kevin Durant', 'Luka Doncic'], color: '#e27602' },
-    { number: 1, description: 'Brothers in the NBA', terms: ['Brook Lopez', 'Seth Curry', 'Jrue Holiday', 'Franz Wagner'], color: '#de0a26' }]
+    { number: 1, description: '700+ Home Runs', terms: ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds'],  color: '#4CAF50' },
+    { number: 1, description: '2023 All Star Game Starters', terms: ['Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman'],  color: '#e5de00' },
+    { number: 1, description: 'Sons of Former MLB Players', terms: ['Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette'], color: '#e27602' },
+    { number: 1, description: '2017 Team USA WBC Players', terms: ['Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'], color: '#de0a26' }]
   
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [width, height] = useWindowSize();
-  console.log(width, height);
+  // console.log(width, height);
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [showHowToPlay, setShowHowToPlay] = useState(false);
@@ -396,7 +412,22 @@ const ConnectionsPage = () => {
   {terms.map((term, index) => {
     let imgSrc = '';
     switch (term) {
-      case 'Brook Lopez': imgSrc = baseballImg; break;
+      case 'Albert Pujols': imgSrc = albertPujols; break;
+      case 'Barry Bonds': imgSrc = barryBonds; break;
+      case 'Babe Ruth': imgSrc = babeRuth; break;
+      case 'Hank Aaron': imgSrc = hankAaron; break;
+      case 'Ke\'Bryan Hayes': imgSrc = kebryanHayes; break;
+      case 'Bo Bichette': imgSrc = boBichette; break;
+      case 'Cavan Biggio': imgSrc = cavanBiggio; break;
+      case 'Fernando Tatis Jr.': imgSrc = fernandoTatisJr; break;
+      case 'Ronald Acuña Jr.': imgSrc = ronaldAcunaJr; break;
+      case 'Shohei Ohtani': imgSrc = shoheiOhtani; break;
+      case 'Freddie Freeman': imgSrc = freddieFreeman; break;
+      case 'Aaron Judge': imgSrc = aaronJudge; break;
+      case 'Eric Hosmer': imgSrc = ericHosmer; break;
+      case 'Adam Jones': imgSrc = adamJones; break;
+      case 'Christian Yelich': imgSrc = christianYelich; break;
+      case 'Nolan Arenado': imgSrc = nolanArenado; break;
       default: imgSrc = miguelCabrera;
     }
 
