@@ -27,12 +27,30 @@ import ericHosmer from './inputs/03-15-2024/ericHosmer.png';
 
 
 const ConnectionsPage = () => {
+  const playerImages = {
+    'Albert Pujols': albertPujols,
+    'Babe Ruth': babeRuth,
+    'Hank Aaron': hankAaron, 
+    'Barry Bonds': barryBonds, 
+    'Ronald Acuña Jr.': ronaldAcunaJr, 
+    'Shohei Ohtani': shoheiOhtani, 
+    'Aaron Judge': aaronJudge, 
+    'Freddie Freeman': freddieFreeman, 
+    'Fernando Tatis Jr.': fernandoTatisJr, 
+    'Ke\'Bryan Hayes': kebryanHayes, 
+    'Cavan Biggio': cavanBiggio, 
+    'Bo Bichette': boBichette, 
+    'Adam Jones': adamJones, 
+    'Christian Yelich': christianYelich, 
+    'Nolan Arenado': nolanArenado, 
+    'Eric Hosmer': ericHosmer
+  };
   const initialTerms = ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds', 'Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman', 'Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette', 'Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'];
   const correctGroups = [
-    { number: 1, description: '700+ Home Runs', terms: ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds'],  color: '#4CAF50' },
-    { number: 1, description: '2023 All Star Game Starters', terms: ['Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman'],  color: '#e5de00' },
-    { number: 1, description: 'Sons of Former MLB Players', terms: ['Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette'], color: '#e27602' },
-    { number: 1, description: '2017 Team USA WBC Players', terms: ['Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'], color: '#de0a26' }]
+    { number: 1, description: '700+ HOME RUNS', terms: ['Babe Ruth', 'Albert Pujols', 'Hank Aaron', 'Barry Bonds'],  color: '#4CAF50' },
+    { number: 1, description: '2023 ALL STAR GAME STARTERS', terms: ['Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman'],  color: '#e5de00' },
+    { number: 1, description: 'SONS OF FORMER MLB PLAYERS', terms: ['Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette'], color: '#e27602' },
+    { number: 1, description: '2017 TEAM USA WBC PLAYERS', terms: ['Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'], color: '#de0a26' }]
   
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
@@ -155,7 +173,8 @@ const ConnectionsPage = () => {
       );
       
       if (foundGroup) {
-        const updatedGuessedGroups = [...guessedGroups, foundGroup];
+        const updatedGroup = { ...foundGroup, terms: selectedTerms };
+        const updatedGuessedGroups = [...guessedGroups, updatedGroup];
         setGuessedGroups(updatedGuessedGroups);
         setTerms(terms.filter(term => !foundGroup.terms.includes(term)));
         setSelectedTerms([]);
@@ -403,8 +422,15 @@ const ConnectionsPage = () => {
           className="guessed-group-combined"
           style={{ backgroundColor: group.color }}
         >
+          <div className="group-images">
+            {group.terms.map((term, termIndex) => (
+              <div key={termIndex} className="player-image-container">
+                <img src={playerImages[term]} alt={term} className="guessed-player-image" />
+                <div className="player-name-overlay">{term}</div>
+              </div>
+            ))}
+          </div>
           <div className="group-description">{group.description}</div>
-          <div className="group-terms">{group.terms.join(', ')}</div>
         </div>
       ))}
     </div>
