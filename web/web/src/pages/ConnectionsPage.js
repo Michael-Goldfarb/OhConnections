@@ -271,6 +271,10 @@ const ConnectionsPage = () => {
   };
   const shuffledTermsArray = shuffleArray([...terms]);
 
+  useEffect(() => {
+    setTerms(shuffleArray([...initialTerms]));
+  }, []);
+  
   const difficultyLevels = [
     { name: 'Easy', color: '#4CAF50' },
     { name: 'Medium', color: '#e5de00' },
