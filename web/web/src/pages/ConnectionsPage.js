@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Component } from 'react';
 import './ConnectionsPage.css';
-import { playerImages, initialTerms, correctGroups } from './inputs/03-15-2024/gameData.js';
+import { playerImages, initialTerms, correctGroups } from './inputs/03-16-2024/gameData.js';
 import baseballImg from '../images/baseball.png';
 import mookieBetts from '../images/examples/mookiebetts.png';
 import maxMuncy from '../images/examples/maxmuncy.png';
@@ -98,23 +98,22 @@ const ConnectionsPage = () => {
         return;
     }
 
-    setIsSubmitting(true);
-
     const currentSetSorted = [...selectedTerms].sort();
     const currentSetString = currentSetSorted.join(',');
-
-    setTimeout(() => {
-      
-      if (submittedSets.includes(currentSetString)) {
-        setPopupMessage("You cannot guess the same 4 players twice.");
-        setShowPopup(true);
-        setTimeout(() => {
-            setShowPopup(false);
-            setIsSubmitting(false);
-        }, 2000);
-        return;
+    
+    if (submittedSets.includes(currentSetString)) {
+      setPopupMessage("You cannot guess the same 4 players twice.");
+      setShowPopup(true);
+      setTimeout(() => {
+          setShowPopup(false);
+          setIsSubmitting(false);
+      }, 2000);
+      return;
     }
+  
+    setIsSubmitting(true);
 
+  setTimeout(() => {
     const oneAway = correctGroups.some(group => {
         const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
         return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
@@ -463,7 +462,7 @@ const ConnectionsPage = () => {
 
     return (
       <div key={index} 
-           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''}`} 
+           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''}`} 
            onClick={() => handleTermClick(term)}
            style={{ cursor: isSubmitting ? 'default' : 'pointer' }}>
         <img src={imgSrc} className="term-image" alt={term} />
