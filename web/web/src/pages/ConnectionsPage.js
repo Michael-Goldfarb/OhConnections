@@ -119,6 +119,7 @@ const ConnectionsPage = () => {
   
   const handleTermClick = (term) => {
     if (gameOver) return;
+    if (isSubmitting || gameOver) return;
     if (selectedTerms.includes(term)) {
       setSelectedTerms(selectedTerms.filter(t => t !== term));
       setShowPopup(false);
@@ -361,7 +362,7 @@ const ConnectionsPage = () => {
 
   
   const renderResultsPopup = () => {
-    const message = userWon ? getVictoryMessage(mistakes) : "Next Time!";
+  const message = userWon ? getVictoryMessage(mistakes) : "Next Time!";
     
     return (
       <div className="results-popup" onClick={() => setShowResultsPopup(false)}>
@@ -379,12 +380,12 @@ const ConnectionsPage = () => {
           </div>
           <div className="game-summary-grid">
           {moveHistory.map((colorSet, index) => (
-  <div key={index} className="summary-row">
-    {colorSet.map((color, colorIndex) => (
-      <div key={colorIndex} className="summary-block" style={{ backgroundColor: color }}></div>
-    ))}
-  </div>
-))}
+            <div key={index} className="summary-row">
+              {colorSet.map((color, colorIndex) => (
+                <div key={colorIndex} className="summary-block" style={{ backgroundColor: color }}></div>
+              ))}
+            </div>
+          ))}
 
           </div>
           <p className="next-puzzle-countdown">NEXT BOARD IN: {nextPuzzleCountdown}</p>
@@ -525,17 +526,18 @@ const ConnectionsPage = () => {
         }
           let isSelected = selectedTerms.includes(term);
           let isAnimating = selectedTerms.indexOf(term) === animateIndex;
-
           return (
-            <div key={index} 
+            <div 
+              key={index} 
               className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shake && guessIncorrect ? 'shake-animation' : ''}`} 
-              onClick={() => handleTermClick(term)}>
+              onClick={() => handleTermClick(term)}
+              style={{ cursor: isSubmitting ? 'not-allowed' : 'pointer' }}> {/* Apply the cursor style conditionally */}
               <img src={imgSrc} className="term-image" alt={term} />
               <div className="text-overlay">{term}</div>
             </div>
           );
       })}
-  </div>
+    </div>
     {!gameOver && (
       <div className="mistakes-section">
         <div className="mistakes-indicator">
@@ -548,9 +550,17 @@ const ConnectionsPage = () => {
     )}
     {!gameOver ? (
       <div className="game-controls">
-        <button onClick={handleShuffle}>Shuffle</button>
-        <button onClick={() => setSelectedTerms([])} disabled={selectedTerms.length === 0}>Deselect All</button>
-        <button onClick={handleSubmit} disabled={selectedTerms.length !== 4}>Submit</button>
+        <button onClick={handleShuffle} disabled={isSubmitting}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+          Shuffle
+        </button>
+
+        <button onClick={() => setSelectedTerms([])} disabled={isSubmitting || selectedTerms.length === 0}style={{ opacity: isSubmitting ? 0.5 : 1}}>
+          Deselect All
+        </button>
+
+        <button onClick={handleSubmit} disabled={isSubmitting || selectedTerms.length !== 4}style={{ opacity: isSubmitting ? 0.5 : 1}}>
+          Submit
+        </button>
       </div>
     ) : (
       <div className="game-over-controls">
