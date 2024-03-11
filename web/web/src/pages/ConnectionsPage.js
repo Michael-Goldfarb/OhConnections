@@ -53,6 +53,7 @@ const ConnectionsPage = () => {
     { number: 1, description: '2017 TEAM USA WBC PLAYERS', terms: ['Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'], color: '#de0a26' }]
   
   const [selectedTerms, setSelectedTerms] = useState([]);
+  const [currentJumpIndex, setCurrentJumpIndex] = useState(null);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -218,7 +219,7 @@ const ConnectionsPage = () => {
           }
         }
       setIsSubmitting(false);
-    }, 1000);
+    }, 1700);
   };
 
   
@@ -239,27 +240,23 @@ const ConnectionsPage = () => {
   }
 
   useEffect(() => {
-    if (selectedTerms.length < 4) {
-      return;
+    if (selectedTerms.length > 0 && isSubmitting) {
+      selectedTerms.forEach((term, index) => {
+        setTimeout(() => {
+          setAnimateIndex(index);
+        }, index * 300);
+      });
+  
+      const lastAnimationDelay = selectedTerms.length * 500;
+      const timeoutId = setTimeout(() => {
+        setAnimateIndex(null);
+        setIsSubmitting(false);
+      }, lastAnimationDelay);
+  
+      return () => clearTimeout(timeoutId);
     }
-    
-    setShake(false);
-    selectedTerms.forEach((term, index) => {
-      setTimeout(() => {
-        setAnimateIndex(index);
-      }, index * 500);
-    });
+  }, [isSubmitting, selectedTerms]);
   
-    const timeoutId = setTimeout(() => {
-      setAnimateIndex(null);
-      if (guessIncorrect) {
-        setShake(true);
-      }
-    }, selectedTerms.length * 30);
-  
-    return () => clearTimeout(timeoutId);
-  
-  }, [selectedTerms, guessIncorrect]);
   
   useEffect(() => {
     if (animateIndex !== null) {
@@ -270,7 +267,6 @@ const ConnectionsPage = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [animateIndex]);
-
 
   useEffect(() => {
     if (guessIncorrect) {
@@ -528,18 +524,15 @@ const ConnectionsPage = () => {
           default: imgSrc = miguelCabrera;
         }
           let isSelected = selectedTerms.includes(term);
-          let shouldAnimate = isSubmitting && isSelected;
+          let isAnimating = selectedTerms.indexOf(term) === animateIndex;
 
           return (
-              <div key={index} 
-                  className={`term-block 
-                              ${isSelected ? 'selected' : ''} 
-                              ${shouldAnimate ? 'jump-animation' : ''} 
-                              ${shake && guessIncorrect ? 'shake-animation' : ''}`} 
-                  onClick={() => handleTermClick(term)}>
-                  <img src={imgSrc} className="term-image" alt={term} />
-                  <div className="text-overlay">{term}</div>
-              </div>
+            <div key={index} 
+              className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shake && guessIncorrect ? 'shake-animation' : ''}`} 
+              onClick={() => handleTermClick(term)}>
+              <img src={imgSrc} className="term-image" alt={term} />
+              <div className="text-overlay">{term}</div>
+            </div>
           );
       })}
   </div>
