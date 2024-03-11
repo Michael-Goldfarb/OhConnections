@@ -142,8 +142,6 @@ const ConnectionsPage = () => {
 
     const currentSetSorted = [...selectedTerms].sort();
     const currentSetString = currentSetSorted.join(',');
-    const animationDelay = 1000;
-    const shakeDuration = 500;
 
     setTimeout(() => {
       
@@ -200,7 +198,7 @@ const ConnectionsPage = () => {
                 setMistakes(0);
             }, 2000);
         }
-      }, shakeDuration);
+      }, 850);
         } else {
           const updatedGroup = { ...foundGroup, terms: selectedTerms };
           setGuessedGroups([...guessedGroups, updatedGroup]);
@@ -219,7 +217,7 @@ const ConnectionsPage = () => {
           }
         }
       setIsSubmitting(false);
-    }, animationDelay);
+    }, 1000);
   };
 
   
