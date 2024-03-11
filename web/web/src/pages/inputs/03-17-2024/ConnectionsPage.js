@@ -78,7 +78,7 @@ const ConnectionsPage = () => {
   
   const handleTermClick = (term) => {
     if (gameOver) return;
-    if (isSubmitting || gameOver) return;
+    if (isSubmitting || gameOver || cooldown) return;
     if (selectedTerms.includes(term)) {
       setSelectedTerms(selectedTerms.filter(t => t !== term));
       setShowPopup(false);
@@ -465,10 +465,11 @@ const ConnectionsPage = () => {
           let isSelected = selectedTerms.includes(term);
           let isAnimating = selectedTerms.indexOf(term) === animateIndex;
           let shouldShake = isSelected && guessIncorrect;
+          let isCooldown = cooldown;
 
     return (
       <div key={index} 
-           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''}`} 
+           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''} ${isCooldown ? 'no-hover' : ''}`} 
            onClick={() => handleTermClick(term)}
            style={{ cursor: isSubmitting ? 'default' : 'pointer' }}>
         <img src={imgSrc} className="term-image" alt={term} />
