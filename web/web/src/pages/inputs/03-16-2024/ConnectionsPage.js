@@ -91,23 +91,24 @@ const ConnectionsPage = () => {
   }, [selectedTerms, gameSessionId]);  
 
   useEffect(() => {
-    const updatedTerms = initialTerms.filter(term => 
+    const updatedTerms = shuffleArray(initialTerms.filter(term => 
       !guessedGroups.some(group => group.terms.includes(term))
-    );
+    ));
     
     setTerms(updatedTerms);
     localStorage.setItem(`terms-${gameSessionId}`, JSON.stringify(updatedTerms));
   }, [guessedGroups, gameSessionId]);
+  
 
   useEffect(() => {
-    const initTerms = JSON.parse(localStorage.getItem(`terms-${gameSessionId}`)) || initialTerms;
+    const initTerms = shuffleArray(JSON.parse(localStorage.getItem(`terms-${gameSessionId}`)) || initialTerms);
     const initGuessedGroups = JSON.parse(localStorage.getItem(`guessedGroups-${gameSessionId}`)) || [];
     
     setTerms(initTerms);
     setGuessedGroups(initGuessedGroups);
     
-    // Additional initialization as needed
   }, []);
+  
   
 
   const getVictoryMessage = (mistakesLeft) => {
