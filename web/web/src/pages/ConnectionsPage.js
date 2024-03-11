@@ -526,15 +526,16 @@ const ConnectionsPage = () => {
         }
           let isSelected = selectedTerms.includes(term);
           let isAnimating = selectedTerms.indexOf(term) === animateIndex;
-          return (
-            <div 
-  key={index} 
-  className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shake && guessIncorrect ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''}`}
-  onClick={() => handleTermClick(term)}
-  style={{ cursor: isSubmitting ? 'default' : 'pointer' }}>
-  <img src={imgSrc} className="term-image" alt={term} />
-  <div className="text-overlay">{term}</div>
-</div>
+          let shouldShake = isSelected && guessIncorrect;
+
+    return (
+      <div key={index} 
+           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''}`} 
+           onClick={() => handleTermClick(term)}
+           style={{ cursor: isSubmitting ? 'default' : 'pointer' }}>
+        <img src={imgSrc} className="term-image" alt={term} />
+        <div className="text-overlay">{term}</div>
+      </div>
 
           );
       })}
