@@ -13,7 +13,6 @@ import salvadorPerez from '../images/examples/salvadorperez.png';
 
 const ConnectionsPage = () => {
   const [selectedTerms, setSelectedTerms] = useState([]);
-  const [currentJumpIndex, setCurrentJumpIndex] = useState(null);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
