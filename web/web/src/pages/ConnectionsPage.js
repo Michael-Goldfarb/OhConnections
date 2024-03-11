@@ -528,13 +528,14 @@ const ConnectionsPage = () => {
           let isAnimating = selectedTerms.indexOf(term) === animateIndex;
           return (
             <div 
-              key={index} 
-              className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shake && guessIncorrect ? 'shake-animation' : ''}`} 
-              onClick={() => handleTermClick(term)}
-              style={{ cursor: isSubmitting ? 'not-allowed' : 'pointer' }}> {/* Apply the cursor style conditionally */}
-              <img src={imgSrc} className="term-image" alt={term} />
-              <div className="text-overlay">{term}</div>
-            </div>
+  key={index} 
+  className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shake && guessIncorrect ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''}`}
+  onClick={() => handleTermClick(term)}
+  style={{ cursor: isSubmitting ? 'default' : 'pointer' }}>
+  <img src={imgSrc} className="term-image" alt={term} />
+  <div className="text-overlay">{term}</div>
+</div>
+
           );
       })}
     </div>
@@ -550,17 +551,26 @@ const ConnectionsPage = () => {
     )}
     {!gameOver ? (
       <div className="game-controls">
-        <button onClick={handleShuffle} disabled={isSubmitting}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
-          Shuffle
-        </button>
+        <button 
+  onClick={handleShuffle} 
+  disabled={isSubmitting}
+  style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+  Shuffle
+</button>
 
-        <button onClick={() => setSelectedTerms([])} disabled={isSubmitting || selectedTerms.length === 0}style={{ opacity: isSubmitting ? 0.5 : 1}}>
-          Deselect All
-        </button>
+<button 
+  onClick={() => setSelectedTerms([])} 
+  disabled={isSubmitting || selectedTerms.length === 0}
+  style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+  Deselect All
+</button>
 
-        <button onClick={handleSubmit} disabled={isSubmitting || selectedTerms.length !== 4}style={{ opacity: isSubmitting ? 0.5 : 1}}>
-          Submit
-        </button>
+<button 
+  onClick={handleSubmit} 
+  disabled={isSubmitting || selectedTerms.length !== 4}
+  style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+  Submit
+</button>
       </div>
     ) : (
       <div className="game-over-controls">

@@ -105,6 +105,12 @@ h1 {
   transform: scale(1.03);
 }
 
+.term-block.no-hover:hover {
+  border-color: initial;
+  box-shadow: none;
+  transform: none;
+}
+
 .mistakes-section {
   text-align: center;
   font-size: 17px;
@@ -141,7 +147,7 @@ h1 {
 .game-controls button:disabled {
   background-color: #444;
   color: #bbb;
-  cursor: not-allowed;
+  cursor: default;
   opacity: 0.6;
 }
 
