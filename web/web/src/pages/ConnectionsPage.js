@@ -198,6 +198,7 @@ const ConnectionsPage = () => {
                 setMistakes(0);
             }, 2000);
         }
+        setGuessIncorrect(false);
       }, 850);
         } else {
           const updatedGroup = { ...foundGroup, terms: selectedTerms };
