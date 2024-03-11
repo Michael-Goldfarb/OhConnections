@@ -142,7 +142,7 @@ const ConnectionsPage = () => {
 
     const currentSetSorted = [...selectedTerms].sort();
     const currentSetString = currentSetSorted.join(',');
-    const animationDelay = 500;
+    const animationDelay = 1000;
     const shakeDuration = 500;
 
     setTimeout(() => {
@@ -256,7 +256,7 @@ const ConnectionsPage = () => {
       if (guessIncorrect) {
         setShake(true);
       }
-    }, selectedTerms.length * 500);
+    }, selectedTerms.length * 30);
   
     return () => clearTimeout(timeoutId);
   
