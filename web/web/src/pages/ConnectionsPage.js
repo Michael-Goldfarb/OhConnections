@@ -54,12 +54,16 @@ const ConnectionsPage = () => {
   
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
+  const [guessIncorrect, setGuessIncorrect] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [width, height] = useWindowSize();
   // console.log(width, height);
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [userWon, setUserWon] = useState(false);
+  const [animateIndex, setAnimateIndex] = useState(null);
+  const [shake, setShake] = useState(false);
   const [moveHistory, setMoveHistory] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState([]);
@@ -130,91 +134,115 @@ const ConnectionsPage = () => {
   };
 
   const handleSubmit = () => {
-    if (gameOver || mistakes <= 0) {
+    if (gameOver || mistakes <= 0 || selectedTerms.length !== 4) {
       return;
     }
+  
+    setIsSubmitting(true);
+  
     const currentSetSorted = [...selectedTerms].sort();
     const currentSetString = currentSetSorted.join(',');
   
     if (submittedSets.includes(currentSetString)) {
       setPopupMessage("You cannot guess the same 4 players twice.");
       setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 2000);
+      setTimeout(() => {
+        setShowPopup(false);
+        setIsSubmitting(false);
+      }, 2000);
       return;
-    } else {
-      const oneAway = correctGroups.some(group => {
-        const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
-        return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
-      });
-
-      const guessColors = selectedTerms.map(term => {
-        const group = correctGroups.find(group => group.terms.includes(term));
-        return group ? group.color : '#FFFFFF';
-      });
-    
-      setMoveHistory(prevHistory => [
-        ...prevHistory,
-        guessColors
-      ]);
+    }
   
+    const oneAway = correctGroups.some(group => {
+      const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
+      return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
+    });
+  
+    const guessColors = selectedTerms.map(term => {
+      const group = correctGroups.find(group => group.terms.includes(term));
+      return group ? group.color : '#FFFFFF';
+    });
+  
+    setMoveHistory(prevHistory => [...prevHistory, guessColors]);
+  
+    setTimeout(() => {
       if (oneAway) {
+        setGuessIncorrect(true);
+        
         if (mistakes > 1) {
-          setPopupMessage("One Away!");
-          setShowPopup(true);
-          setTimeout(() => setShowPopup(false), 2000);
+          setTimeout(() => {
+            setGuessIncorrect(false);
+            setPopupMessage("One Away!");
+            setShowPopup(true);
+            setTimeout(() => setShowPopup(false), 2000);
+          }, 500);
+          
           setSubmittedSets([...submittedSets, currentSetString]);
           setMistakes(mistakes - 1);
-          return; 
+          setIsSubmitting(false);
+          return;
         }
       }
+  
+      const foundGroup = correctGroups.find(group => group.terms.sort().join(',') === currentSetString);
+  
 
-      const foundGroup = correctGroups.find(group =>
-        group.terms.sort().join(',') === currentSetString
-      );
-      
+
+
+
       if (foundGroup) {
         const updatedGroup = { ...foundGroup, terms: selectedTerms };
-        const updatedGuessedGroups = [...guessedGroups, updatedGroup];
-        setGuessedGroups(updatedGuessedGroups);
+        setGuessedGroups([...guessedGroups, updatedGroup]);
         setTerms(terms.filter(term => !foundGroup.terms.includes(term)));
         setSelectedTerms([]);
-        if (updatedGuessedGroups.length === correctGroups.length) {
+  
+        if (guessedGroups.length + 1 === correctGroups.length) {
           setGameOver(true);
           setUserWon(true);
           setPopupMessage(getVictoryMessage(mistakes));
           setShowPopup(true);
-          setTimeout(() => setShowPopup(false), 1000);
           setTimeout(() => {
+            setShowPopup(false);
             setShowResultsPopup(true);
-        }, 1000);
+          }, 1000);
         }
       } else {
         setSubmittedSets([...submittedSets, currentSetString]);
         setMistakes(mistakes - 1);
+        setShake(true);
+          setTimeout(() => {
+            setShake(false);
+            if (oneAway && mistakes > 1) {
+              setPopupMessage("One Away!");
+              setShowPopup(true);
+              setTimeout(() => setShowPopup(false), 2000);
+            }
+          }, 500);
         if (mistakes <= 1) {
           setGameOver(true);
-          setPopupMessage("Nice try!");
           setUserWon(false);
+          setShake(true);
+          setTimeout(() => {
+            setShake(false);
+            setGuessIncorrect(true); 
+            setMistakes(mistakes - 1);
+          }, 500);
+          setPopupMessage("Nice try!");
           setShowPopup(true);
           setTimeout(() => {
             setShowPopup(false);
-    
-            const remainingGroups = correctGroups.filter(group => 
-                !guessedGroups.some(guessedGroup => 
-                    guessedGroup.description === group.description
-                )
-            );
-    
-            setRemainingGroupsToReveal(remainingGroups);
+            setRemainingGroupsToReveal(correctGroups.filter(group => !guessedGroups.some(guessedGroup => guessedGroup.description === group.description)));
             setReadyToShowPopUp(true);
             setSelectedTerms([]);
             setMistakes(0);
-        }, 2000);
-        return;
+          }, 2000);
         }
       }
-    }
+  
+      setIsSubmitting(false); // Reset submission status after processing
+    }, 2000); // Adjust as needed based on the duration of the jump animation
   };
+  
   
 
   function useWindowSize() {
@@ -230,6 +258,62 @@ const ConnectionsPage = () => {
   
     return size;
   }
+
+  useEffect(() => {
+    if (selectedTerms.length < 4) {
+      return;
+    }
+    
+    setShake(false);
+    selectedTerms.forEach((term, index) => {
+      setTimeout(() => {
+        setAnimateIndex(index);
+      }, index * 500);
+    });
+  
+    const timeoutId = setTimeout(() => {
+      setAnimateIndex(null);
+      if (guessIncorrect) {
+        setShake(true);
+      }
+    }, selectedTerms.length * 500);
+  
+    return () => clearTimeout(timeoutId);
+  
+  }, [selectedTerms, guessIncorrect]);
+  
+  useEffect(() => {
+    if (animateIndex !== null) {
+      const timeoutId = setTimeout(() => {
+        setAnimateIndex(null);
+      }, 500);
+  
+      return () => clearTimeout(timeoutId);
+    }
+  }, [animateIndex]);
+
+
+  useEffect(() => {
+    if (guessIncorrect) {
+      const timeoutId = setTimeout(() => {
+        setShake(false);
+      }, 500);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [guessIncorrect]);
+
+  useEffect(() => {
+    if (shake) {
+      const timer = setTimeout(() => {
+        setShake(false);
+        setGuessIncorrect(false);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [shake]);
+
+
   
   useEffect(() => {
     if (gameOver && remainingGroupsToReveal.length > 0) {
@@ -438,38 +522,48 @@ const ConnectionsPage = () => {
         </div>
       ))}
     </div>
+
+
+
+
     <div className="terms-grid" style={{ gridTemplateColumns: width > 0 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)' }}>
-  {terms.map((term, index) => {
-    let imgSrc = '';
-    switch (term) {
-      case 'Albert Pujols': imgSrc = albertPujols; break;
-      case 'Barry Bonds': imgSrc = barryBonds; break;
-      case 'Babe Ruth': imgSrc = babeRuth; break;
-      case 'Hank Aaron': imgSrc = hankAaron; break;
-      case 'Ke\'Bryan Hayes': imgSrc = kebryanHayes; break;
-      case 'Bo Bichette': imgSrc = boBichette; break;
-      case 'Cavan Biggio': imgSrc = cavanBiggio; break;
-      case 'Fernando Tatis Jr.': imgSrc = fernandoTatisJr; break;
-      case 'Ronald Acuña Jr.': imgSrc = ronaldAcunaJr; break;
-      case 'Shohei Ohtani': imgSrc = shoheiOhtani; break;
-      case 'Freddie Freeman': imgSrc = freddieFreeman; break;
-      case 'Aaron Judge': imgSrc = aaronJudge; break;
-      case 'Eric Hosmer': imgSrc = ericHosmer; break;
-      case 'Adam Jones': imgSrc = adamJones; break;
-      case 'Christian Yelich': imgSrc = christianYelich; break;
-      case 'Nolan Arenado': imgSrc = nolanArenado; break;
-      default: imgSrc = miguelCabrera;
-    }
+      {terms.map((term, index) => {
+        let imgSrc = '';
+        switch (term) {
+          case 'Albert Pujols': imgSrc = albertPujols; break;
+          case 'Barry Bonds': imgSrc = barryBonds; break;
+          case 'Babe Ruth': imgSrc = babeRuth; break;
+          case 'Hank Aaron': imgSrc = hankAaron; break;
+          case 'Ke\'Bryan Hayes': imgSrc = kebryanHayes; break;
+          case 'Bo Bichette': imgSrc = boBichette; break;
+          case 'Cavan Biggio': imgSrc = cavanBiggio; break;
+          case 'Fernando Tatis Jr.': imgSrc = fernandoTatisJr; break;
+          case 'Ronald Acuña Jr.': imgSrc = ronaldAcunaJr; break;
+          case 'Shohei Ohtani': imgSrc = shoheiOhtani; break;
+          case 'Freddie Freeman': imgSrc = freddieFreeman; break;
+          case 'Aaron Judge': imgSrc = aaronJudge; break;
+          case 'Eric Hosmer': imgSrc = ericHosmer; break;
+          case 'Adam Jones': imgSrc = adamJones; break;
+          case 'Christian Yelich': imgSrc = christianYelich; break;
+          case 'Nolan Arenado': imgSrc = nolanArenado; break;
+          default: imgSrc = miguelCabrera;
+        }
+          let isSelected = selectedTerms.includes(term);
+          let shouldAnimate = isSubmitting && isSelected;
 
-    return (
-      <div key={index} className={`term-block ${selectedTerms.includes(term) ? 'selected' : ''}`} onClick={() => handleTermClick(term)}>
-        <img src={imgSrc} className="term-image" alt={term} />
-        <div className="text-overlay">{term}</div>
-      </div>
-    );
-  })}
-</div>
-
+          return (
+              <div key={index} 
+                  className={`term-block 
+                              ${isSelected ? 'selected' : ''} 
+                              ${shouldAnimate ? 'jump-animation' : ''} 
+                              ${shake && guessIncorrect ? 'shake-animation' : ''}`} 
+                  onClick={() => handleTermClick(term)}>
+                  <img src={imgSrc} className="term-image" alt={term} />
+                  <div className="text-overlay">{term}</div>
+              </div>
+          );
+      })}
+  </div>
     {!gameOver && (
       <div className="mistakes-section">
         <div className="mistakes-indicator">
