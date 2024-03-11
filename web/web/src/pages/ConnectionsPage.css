@@ -1966,6 +1966,13 @@ h1 {
     margin-bottom: 1.1413276231263385vh;
     border-radius: 1vh;
   }
+
+  .group-description {
+    bottom: 6.9vh;
+    font-size: 1.7vh;
+    padding: 3px 0; 
+    margin-bottom: .3vh;
+  }
   
   .results-popup {
     left: -150px;
