@@ -98,23 +98,22 @@ const ConnectionsPage = () => {
         return;
     }
 
-    setIsSubmitting(true);
+    if (submittedSets.includes(currentSetString)) {
+      setPopupMessage("You cannot guess the same 4 players twice.");
+      setShowPopup(true);
+      setTimeout(() => {
+          setShowPopup(false);
+          setIsSubmitting(false);
+      }, 2000);
+      return;
+  }
+  
+  setIsSubmitting(true);
 
     const currentSetSorted = [...selectedTerms].sort();
     const currentSetString = currentSetSorted.join(',');
 
     setTimeout(() => {
-      
-      if (submittedSets.includes(currentSetString)) {
-        setPopupMessage("You cannot guess the same 4 players twice.");
-        setShowPopup(true);
-        setTimeout(() => {
-            setShowPopup(false);
-            setIsSubmitting(false);
-        }, 2000);
-        return;
-    }
-
     const oneAway = correctGroups.some(group => {
         const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
         return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
@@ -463,7 +462,7 @@ const ConnectionsPage = () => {
 
     return (
       <div key={index} 
-           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''}`} 
+           className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''}`} 
            onClick={() => handleTermClick(term)}
            style={{ cursor: isSubmitting ? 'default' : 'pointer' }}>
         <img src={imgSrc} className="term-image" alt={term} />
