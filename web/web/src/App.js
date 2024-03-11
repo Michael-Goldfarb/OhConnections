@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Connections from "./pages/ConnectionsPage.js";
 import Connections03152024 from "./pages/inputs/03-15-2024/ConnectionsPage.js";
 import Connections03162024 from "./pages/inputs/03-16-2024/ConnectionsPage.js";
+import Connections03172024 from "./pages/inputs/03-17-2024/ConnectionsPage.js";
 import Navbar from "./pages/components/NavBar.js";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Connections />} />
           <Route path="/03-15-2024" element={<Connections03152024 />} />
           <Route path="/03-16-2024" element={<Connections03162024 />} />
+          <Route path="/03-17-2024" element={<Connections03172024 />} />
         </Routes>
       </Router>
     </div>

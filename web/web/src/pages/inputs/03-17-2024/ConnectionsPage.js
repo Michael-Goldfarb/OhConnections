@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './ConnectionsPage.css';
-import { playerImages, initialTerms, correctGroups } from './inputs/03-17-2024/gameData.js';
-import baseballImg from '../images/baseball.png';
-import mookieBetts from '../images/examples/mookiebetts.png';
-import maxMuncy from '../images/examples/maxmuncy.png';
-import joseAltuve from '../images/examples/josealtuve.png';
-import freddieFreeman from '../images/examples/freddiefreeman.png';
-import shoheiOhtani from '../images/examples/shoheiohtani.png';
-import ronaldAcunaJr from '../images/examples/ronaldacunajr.png';
-import miguelCabrera from '../images/examples/miguelcabrera.png';
-import salvadorPerez from '../images/examples/salvadorperez.png';
+import '../../ConnectionsPage.css';
+import { playerImages, initialTerms, correctGroups } from './gameData.js';
+import baseballImg from '../../../images/baseball.png';
+import mookieBetts from '../../../images/examples/mookiebetts.png';
+import maxMuncy from '../../../images/examples/maxmuncy.png';
+import joseAltuve from '../../../images/examples/josealtuve.png';
+import freddieFreeman from '../../../images/examples/freddiefreeman.png';
+import shoheiOhtani from '../../../images/examples/shoheiohtani.png';
+import ronaldAcunaJr from '../../../images/examples/ronaldacunajr.png';
+import miguelCabrera from '../../../images/examples/miguelcabrera.png';
+import salvadorPerez from '../../../images/examples/salvadorperez.png';
 
 const ConnectionsPage = () => {
   const [selectedTerms, setSelectedTerms] = useState([]);

@@ -15,10 +15,6 @@ function NavBar() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleNavigate = (date) => {
-    navigate(`/inputs/${date}/ConnectionsPage`);
-  };
-
   return (
     <nav className="bg-gray-800">
       <div className="navbars">
@@ -32,7 +28,7 @@ function NavBar() {
           {isDropdownOpen && (
             <div className="dropdown-menu">
               <div className="dropdown-item" onClick={() => navigate('/')}>Today</div>
-              {['03-15-2024'].map((item, index) => (
+              {['03-16-2024', '03-15-2024'].map((item, index) => (
                 <div key={index} className="dropdown-item" onClick={() => navigate(`/${item}`)}>{item}</div>
               ))}
             </div>
