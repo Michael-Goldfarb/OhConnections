@@ -1,64 +1,23 @@
 import React, { useState, useEffect, Component } from 'react';
 import './ConnectionsPage.css';
+import { playerImages, initialTerms, correctGroups } from './inputs/03-15-2024/gameData.js';
 import baseballImg from '../images/baseball.png';
-import freddieFreeman from '../images/examples/freddiefreeman.png';
 import mookieBetts from '../images/examples/mookiebetts.png';
-import shoheiOhtani from '../images/examples/shoheiohtani.png';
 import maxMuncy from '../images/examples/maxmuncy.png';
 import joseAltuve from '../images/examples/josealtuve.png';
-import miguelCabrera from '../images/examples/miguelcabrera.png';
+import freddieFreeman from '../images/examples/freddiefreeman.png';
+import shoheiOhtani from '../images/examples/shoheiohtani.png';
 import ronaldAcunaJr from '../images/examples/ronaldacunajr.png';
+import miguelCabrera from '../images/examples/miguelcabrera.png';
 import salvadorPerez from '../images/examples/salvadorperez.png';
-import albertPujols from './inputs/03-15-2024/albertPujols.png';
-import babeRuth from './inputs/03-15-2024/babeRuth.jpg';
-import hankAaron from './inputs/03-15-2024/hankAaron.jpg';
-import barryBonds from './inputs/03-15-2024/barryBonds.jpg';
-import fernandoTatisJr from './inputs/03-15-2024/fernandoTatisJr.png';
-import cavanBiggio from './inputs/03-15-2024/cavanBiggio.png';
-import boBichette from './inputs/03-15-2024/boBichette.png';
-import kebryanHayes from './inputs/03-15-2024/kebryanHayes.png';
-import aaronJudge from './inputs/03-15-2024/aaronJudge.png';
-import nolanArenado from './inputs/03-15-2024/nolanArenado.png';
-import adamJones from './inputs/03-15-2024/adamJones.png';
-import christianYelich from './inputs/03-15-2024/christianYelich.png';
-import ericHosmer from './inputs/03-15-2024/ericHosmer.png';
-
-
-
 
 const ConnectionsPage = () => {
-  const playerImages = {
-    'Albert Pujols': albertPujols,
-    'Babe Ruth': babeRuth,
-    'Hank Aaron': hankAaron, 
-    'Barry Bonds': barryBonds, 
-    'Ronald Acuña Jr.': ronaldAcunaJr, 
-    'Shohei Ohtani': shoheiOhtani, 
-    'Aaron Judge': aaronJudge, 
-    'Freddie Freeman': freddieFreeman, 
-    'Fernando Tatis Jr.': fernandoTatisJr, 
-    'Ke\'Bryan Hayes': kebryanHayes, 
-    'Cavan Biggio': cavanBiggio, 
-    'Bo Bichette': boBichette, 
-    'Adam Jones': adamJones, 
-    'Christian Yelich': christianYelich, 
-    'Nolan Arenado': nolanArenado, 
-    'Eric Hosmer': ericHosmer
-  };
-  const initialTerms = ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds', 'Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman', 'Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette', 'Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'];
-  const correctGroups = [
-    { number: 1, description: '700+ HOME RUNS', terms: ['Babe Ruth', 'Albert Pujols', 'Hank Aaron', 'Barry Bonds'],  color: '#4CAF50' },
-    { number: 1, description: '2023 ALL STAR GAME STARTERS', terms: ['Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman'],  color: '#e5de00' },
-    { number: 1, description: 'SONS OF FORMER MLB PLAYERS', terms: ['Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette'], color: '#e27602' },
-    { number: 1, description: '2017 TEAM USA WBC PLAYERS', terms: ['Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'], color: '#de0a26' }]
-  
   const [selectedTerms, setSelectedTerms] = useState([]);
   const [currentJumpIndex, setCurrentJumpIndex] = useState(null);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [width, height] = useWindowSize();
-  // console.log(width, height);
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [showHowToPlay, setShowHowToPlay] = useState(false);
@@ -467,9 +426,6 @@ const ConnectionsPage = () => {
       </div>
     );
   };
-  
-  
-  
 
   return (
     <div className="connections-game">
@@ -499,31 +455,9 @@ const ConnectionsPage = () => {
       ))}
     </div>
 
-
-
-
     <div className="terms-grid" style={{ gridTemplateColumns: width > 0 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)' }}>
       {terms.map((term, index) => {
-        let imgSrc = '';
-        switch (term) {
-          case 'Albert Pujols': imgSrc = albertPujols; break;
-          case 'Barry Bonds': imgSrc = barryBonds; break;
-          case 'Babe Ruth': imgSrc = babeRuth; break;
-          case 'Hank Aaron': imgSrc = hankAaron; break;
-          case 'Ke\'Bryan Hayes': imgSrc = kebryanHayes; break;
-          case 'Bo Bichette': imgSrc = boBichette; break;
-          case 'Cavan Biggio': imgSrc = cavanBiggio; break;
-          case 'Fernando Tatis Jr.': imgSrc = fernandoTatisJr; break;
-          case 'Ronald Acuña Jr.': imgSrc = ronaldAcunaJr; break;
-          case 'Shohei Ohtani': imgSrc = shoheiOhtani; break;
-          case 'Freddie Freeman': imgSrc = freddieFreeman; break;
-          case 'Aaron Judge': imgSrc = aaronJudge; break;
-          case 'Eric Hosmer': imgSrc = ericHosmer; break;
-          case 'Adam Jones': imgSrc = adamJones; break;
-          case 'Christian Yelich': imgSrc = christianYelich; break;
-          case 'Nolan Arenado': imgSrc = nolanArenado; break;
-          default: imgSrc = miguelCabrera;
-        }
+        let imgSrc = playerImages[term];
           let isSelected = selectedTerms.includes(term);
           let isAnimating = selectedTerms.indexOf(term) === animateIndex;
           let shouldShake = isSelected && guessIncorrect;
@@ -552,26 +486,17 @@ const ConnectionsPage = () => {
     )}
     {!gameOver ? (
       <div className="game-controls">
-        <button 
-  onClick={handleShuffle} 
-  disabled={isSubmitting}
-  style={{ opacity: isSubmitting ? 0.5 : 1 }}>
-  Shuffle
-</button>
+        <button onClick={handleShuffle} disabled={isSubmitting}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+          Shuffle
+        </button>
 
-<button 
-  onClick={() => setSelectedTerms([])} 
-  disabled={isSubmitting || selectedTerms.length === 0}
-  style={{ opacity: isSubmitting ? 0.5 : 1 }}>
-  Deselect All
-</button>
+        <button onClick={() => setSelectedTerms([])} disabled={isSubmitting || selectedTerms.length === 0}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+          Deselect All
+        </button>
 
-<button 
-  onClick={handleSubmit} 
-  disabled={isSubmitting || selectedTerms.length !== 4}
-  style={{ opacity: isSubmitting ? 0.5 : 1 }}>
-  Submit
-</button>
+        <button onClick={handleSubmit} disabled={isSubmitting || selectedTerms.length !== 4}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+          Submit
+        </button>
       </div>
     ) : (
       <div className="game-over-controls">
