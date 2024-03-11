@@ -135,113 +135,93 @@ const ConnectionsPage = () => {
 
   const handleSubmit = () => {
     if (gameOver || mistakes <= 0 || selectedTerms.length !== 4) {
-      return;
+        return;
     }
-  
+
     setIsSubmitting(true);
-  
+
     const currentSetSorted = [...selectedTerms].sort();
     const currentSetString = currentSetSorted.join(',');
-  
-    if (submittedSets.includes(currentSetString)) {
-      setPopupMessage("You cannot guess the same 4 players twice.");
-      setShowPopup(true);
-      setTimeout(() => {
-        setShowPopup(false);
-        setIsSubmitting(false);
-      }, 2000);
-      return;
-    }
-  
-    const oneAway = correctGroups.some(group => {
-      const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
-      return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
-    });
-  
-    const guessColors = selectedTerms.map(term => {
-      const group = correctGroups.find(group => group.terms.includes(term));
-      return group ? group.color : '#FFFFFF';
-    });
-  
-    setMoveHistory(prevHistory => [...prevHistory, guessColors]);
-  
+    const animationDelay = 500;
+    const shakeDuration = 500;
+
     setTimeout(() => {
-      if (oneAway) {
-        setGuessIncorrect(true);
-        
-        if (mistakes > 1) {
-          setTimeout(() => {
-            setGuessIncorrect(false);
-            setPopupMessage("One Away!");
-            setShowPopup(true);
-            setTimeout(() => setShowPopup(false), 2000);
-          }, 500);
-          
-          setSubmittedSets([...submittedSets, currentSetString]);
-          setMistakes(mistakes - 1);
-          setIsSubmitting(false);
-          return;
-        }
-      }
-  
-      const foundGroup = correctGroups.find(group => group.terms.sort().join(',') === currentSetString);
-  
-
-
-
-
-      if (foundGroup) {
-        const updatedGroup = { ...foundGroup, terms: selectedTerms };
-        setGuessedGroups([...guessedGroups, updatedGroup]);
-        setTerms(terms.filter(term => !foundGroup.terms.includes(term)));
-        setSelectedTerms([]);
-  
-        if (guessedGroups.length + 1 === correctGroups.length) {
-          setGameOver(true);
-          setUserWon(true);
-          setPopupMessage(getVictoryMessage(mistakes));
-          setShowPopup(true);
-          setTimeout(() => {
+      
+      if (submittedSets.includes(currentSetString)) {
+        setPopupMessage("You cannot guess the same 4 players twice.");
+        setShowPopup(true);
+        setTimeout(() => {
             setShowPopup(false);
-            setShowResultsPopup(true);
-          }, 1000);
+            setIsSubmitting(false);
+        }, 2000);
+        return;
+    }
+
+    const oneAway = correctGroups.some(group => {
+        const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
+        return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
+    });
+
+    const guessColors = selectedTerms.map(term => {
+        const group = correctGroups.find(group => group.terms.includes(term));
+        return group ? group.color : '#FFFFFF';
+    });
+
+    setMoveHistory(prevHistory => [...prevHistory, guessColors]);
+        
+    const foundGroup = correctGroups.find(group => group.terms.sort().join(',') === currentSetString);
+
+    if (!foundGroup) {
+      setGuessIncorrect(true);
+      setShake(true);
+
+      setTimeout(() => {
+        setShake(false);
+
+        if (oneAway && mistakes > 1) {
+          setPopupMessage("One Away!");
+          setShowPopup(true);
+          setTimeout(() => setShowPopup(false), 2000);
         }
-      } else {
+            
         setSubmittedSets([...submittedSets, currentSetString]);
         setMistakes(mistakes - 1);
-        setShake(true);
-          setTimeout(() => {
-            setShake(false);
-            if (oneAway && mistakes > 1) {
-              setPopupMessage("One Away!");
-              setShowPopup(true);
-              setTimeout(() => setShowPopup(false), 2000);
-            }
-          }, 500);
+
         if (mistakes <= 1) {
-          setGameOver(true);
-          setUserWon(false);
-          setShake(true);
-          setTimeout(() => {
-            setShake(false);
-            setGuessIncorrect(true); 
-            setMistakes(mistakes - 1);
-          }, 500);
-          setPopupMessage("Nice try!");
-          setShowPopup(true);
-          setTimeout(() => {
-            setShowPopup(false);
-            setRemainingGroupsToReveal(correctGroups.filter(group => !guessedGroups.some(guessedGroup => guessedGroup.description === group.description)));
-            setReadyToShowPopUp(true);
-            setSelectedTerms([]);
-            setMistakes(0);
-          }, 2000);
+            setGameOver(true);
+            setUserWon(false);
+            setPopupMessage("Nice try!");
+            setShowPopup(true);
+            setTimeout(() => {
+                setShowPopup(false);
+                setRemainingGroupsToReveal(correctGroups.filter(group => !guessedGroups.some(guessedGroup => guessedGroup.description === group.description)));
+                setReadyToShowPopUp(true);
+                setSelectedTerms([]);
+                setMistakes(0);
+            }, 2000);
         }
-      }
-  
-      setIsSubmitting(false); // Reset submission status after processing
-    }, 2000); // Adjust as needed based on the duration of the jump animation
+      }, shakeDuration);
+        } else {
+          const updatedGroup = { ...foundGroup, terms: selectedTerms };
+          setGuessedGroups([...guessedGroups, updatedGroup]);
+          setTerms(terms.filter(term => !foundGroup.terms.includes(term)));
+          setSelectedTerms([]);
+
+          if (guessedGroups.length + 1 === correctGroups.length) {
+            setGameOver(true);
+            setUserWon(true);
+            setPopupMessage(getVictoryMessage(mistakes));
+            setShowPopup(true);
+            setTimeout(() => {
+                setShowPopup(false);
+                setShowResultsPopup(true);
+            }, 1000);
+          }
+        }
+      setIsSubmitting(false);
+    }, animationDelay);
   };
+
   
   
 
