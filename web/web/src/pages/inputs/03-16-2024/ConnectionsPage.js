@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../ConnectionsPage.css';
 import { playerImages, initialTerms, correctGroups } from './gameData.js';
 import baseballImg from '../../../images/baseball.png';
@@ -13,6 +13,7 @@ import salvadorPerez from '../../../images/examples/salvadorperez.png';
 
 const ConnectionsPage = () => {
   const [selectedTerms, setSelectedTerms] = useState([]);
+  const [cooldown, setCooldown] = useState(false);
   const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -94,10 +95,13 @@ const ConnectionsPage = () => {
   };
 
   const handleSubmit = () => {
-    if (gameOver || mistakes <= 0 || selectedTerms.length !== 4) {
+    if (gameOver || mistakes <= 0 || selectedTerms.length !== 4 || cooldown) {
         return;
     }
 
+    const currentSetSorted = [...selectedTerms].sort();
+    const currentSetString = currentSetSorted.join(',');
+    
     if (submittedSets.includes(currentSetString)) {
       setPopupMessage("You cannot guess the same 4 players twice.");
       setShowPopup(true);
@@ -106,14 +110,11 @@ const ConnectionsPage = () => {
           setIsSubmitting(false);
       }, 2000);
       return;
-  }
+    }
   
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-    const currentSetSorted = [...selectedTerms].sort();
-    const currentSetString = currentSetSorted.join(',');
-
-    setTimeout(() => {
+  setTimeout(() => {
     const oneAway = correctGroups.some(group => {
         const matchingTerms = group.terms.filter(term => currentSetSorted.includes(term));
         return matchingTerms.length === 3 && group.terms.sort().join(',') !== currentSetString;
@@ -131,6 +132,11 @@ const ConnectionsPage = () => {
     if (!foundGroup) {
       setGuessIncorrect(true);
       setShake(true);
+
+      setCooldown(true);
+        setTimeout(() => {
+          setCooldown(false);
+        }, 1200);
 
       setTimeout(() => {
         setShake(false);
@@ -484,15 +490,24 @@ const ConnectionsPage = () => {
     )}
     {!gameOver ? (
       <div className="game-controls">
-        <button onClick={handleShuffle} disabled={isSubmitting}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+        <button 
+          onClick={handleShuffle}
+          disabled={isSubmitting || shake || cooldown} // Include cooldown in the condition
+          style={{ opacity: (isSubmitting || shake || cooldown) ? 0.5 : 1 }}>
           Shuffle
         </button>
 
-        <button onClick={() => setSelectedTerms([])} disabled={isSubmitting || selectedTerms.length === 0}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+        <button 
+          onClick={() => setSelectedTerms([])}
+          disabled={isSubmitting || shake || cooldown || selectedTerms.length === 0} // Include cooldown in the condition
+          style={{ opacity: (isSubmitting || shake || cooldown) ? 0.5 : 1 }}>
           Deselect All
         </button>
 
-        <button onClick={handleSubmit} disabled={isSubmitting || selectedTerms.length !== 4}style={{ opacity: isSubmitting ? 0.5 : 1 }}>
+        <button 
+          onClick={handleSubmit}
+          disabled={isSubmitting || shake || cooldown || selectedTerms.length !== 4} // Include cooldown in the condition
+          style={{ opacity: (isSubmitting || shake || cooldown) ? 0.5 : 1 }}>
           Submit
         </button>
       </div>
