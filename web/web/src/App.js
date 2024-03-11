@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Connections from "./pages/ConnectionsPage.js";
+import Connections03152024 from "./pages/inputs/03-15-2024/ConnectionsPage.js";
 import Navbar from "./pages/components/NavBar.js";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Navbar /> 
         <Routes>
           <Route path="/" element={<Connections />} />
+          <Route path="/03-15-2024" element={<Connections03152024 />} />
         </Routes>
       </Router>
     </div>

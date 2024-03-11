@@ -15,21 +15,25 @@ function NavBar() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleNavigate = (date) => {
+    navigate(`/inputs/${date}/ConnectionsPage`);
+  };
+
   return (
     <nav className="bg-gray-800">
-      <div className="flex items-center">
-        <div className="logo-container flex-grow flex justify-center">
+      <div className="navbars">
+        <div className="logo-container">
           <Link to="/" onClick={handleClickLogo}>
             <img src={logo} alt="Logo" className="main-logo" />
           </Link>
         </div>
         <div className="dropdown-container">
-          <button onClick={toggleDropdown} className="dropdown-button">Previous Grids</button>
+        <button onClick={toggleDropdown} className="dropdown-button">Previous Grids</button>
           {isDropdownOpen && (
             <div className="dropdown-menu">
-              <div className="dropdown-item">Today</div>
-              {['03-15-2024',].map((item, index) => (
-                <div key={index} className="dropdown-item">{item}</div>
+              <div className="dropdown-item" onClick={() => navigate('/')}>Today</div>
+              {['03-15-2024'].map((item, index) => (
+                <div key={index} className="dropdown-item" onClick={() => navigate(`/${item}`)}>{item}</div>
               ))}
             </div>
           )}
