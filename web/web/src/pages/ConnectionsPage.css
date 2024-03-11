@@ -242,6 +242,7 @@ h1 {
   padding: 3px 0; 
 }
 
+
 .results-popup {
   position: fixed;
   top: 0;
@@ -1546,7 +1547,7 @@ h1 {
     background-color: #000;
     color: white;
     text-align: center;
-    font-size: 1.36vh;
+    font-size: 1.1vh;
     font-weight: 550;
     overflow: hidden;
   }
