@@ -200,7 +200,7 @@ h1 {
   align-items: flex-end;
   height: 100%;
   margin-bottom: -20px;
-  gap: 11px;
+  gap: 28px;
 }
 
 .player-image-container {
@@ -220,13 +220,13 @@ h1 {
 .player-name-overlay {
   position: absolute;
   bottom: 0;
-  left: -4px;
-  width: 110px;
+  left: -15px;
+  width: 127px;
   padding: 2px 0;
   background-color: #000;
   color: white;
   text-align: center;
-  font-size: 10px;
+  font-size: 9.6px;
   font-weight: 550;
   overflow: hidden;
 }
