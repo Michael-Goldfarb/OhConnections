@@ -14,9 +14,7 @@ import salvadorPerez from '../../../images/examples/salvadorperez.png';
 const ConnectionsPage = () => {
   const gameSessionId = '03-15-2024';
 
-  // const [selectedTerms, setSelectedTerms] = useState([]);
   const [cooldown, setCooldown] = useState(false);
-  const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [width, height] = useWindowSize();
@@ -26,13 +24,30 @@ const ConnectionsPage = () => {
   const [userWon, setUserWon] = useState(false);
   const [animateIndex, setAnimateIndex] = useState(null);
   const [shake, setShake] = useState(false);
-  const [moveHistory, setMoveHistory] = useState([]);
-  const [gameOver, setGameOver] = useState(false);
+  // const [selectedTerms, setSelectedTerms] = useState([]);    
+  // const [moveHistory, setMoveHistory] = useState([]);
+  // const [gameOver, setGameOver] = useState(false);
+  // const [showResultsPopup, setShowResultsPopup] = useState(false);
   // const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState([]);
   // const [mistakes, setMistakes] = useState(4);
   // const [submittedSets, setSubmittedSets] = useState([]);
   // const [guessedGroups, setGuessedGroups] = useState([]);
   // const [terms, setTerms] = useState(initialTerms);
+  const [gameOver, setGameOver] = useState(() => {
+    const saved = localStorage.getItem(`gameOver-${gameSessionId}`);
+    return saved ? JSON.parse(saved) : false;
+  });
+  
+  const [showResultsPopup, setShowResultsPopup] = useState(() => {
+    const saved = localStorage.getItem(`showResultsPopup-${gameSessionId}`);
+    return saved ? JSON.parse(saved) : false;
+  });
+  
+  const [moveHistory, setMoveHistory] = useState(() => {
+    const saved = localStorage.getItem(`moveHistory-${gameSessionId}`);
+    return saved ? JSON.parse(saved) : [];
+  });
+  
   const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState(() => {
     const savedData = localStorage.getItem(`remainingGroupsToReveal-${gameSessionId}`);
     return savedData ? JSON.parse(savedData) : [];
@@ -89,6 +104,18 @@ const ConnectionsPage = () => {
   useEffect(() => {
     localStorage.setItem(`selectedTerms-${gameSessionId}`, JSON.stringify(selectedTerms));
   }, [selectedTerms, gameSessionId]);  
+
+  useEffect(() => {
+    localStorage.setItem(`gameOver-${gameSessionId}`, JSON.stringify(gameOver));
+  }, [gameOver, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`showResultsPopup-${gameSessionId}`, JSON.stringify(showResultsPopup));
+  }, [showResultsPopup, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`moveHistory-${gameSessionId}`, JSON.stringify(moveHistory));
+  }, [moveHistory, gameSessionId]);
 
   useEffect(() => {
     const updatedTerms = shuffleArray(initialTerms.filter(term => 

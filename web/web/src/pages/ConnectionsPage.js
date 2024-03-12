@@ -12,9 +12,9 @@ import miguelCabrera from '../images/examples/miguelcabrera.png';
 import salvadorPerez from '../images/examples/salvadorperez.png';
 
 const ConnectionsPage = () => {
-  const [selectedTerms, setSelectedTerms] = useState([]);
+  const gameSessionId = 'defaultPage';
+
   const [cooldown, setCooldown] = useState(false);
-  const [showResultsPopup, setShowResultsPopup] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [width, height] = useWindowSize();
@@ -24,47 +24,119 @@ const ConnectionsPage = () => {
   const [userWon, setUserWon] = useState(false);
   const [animateIndex, setAnimateIndex] = useState(null);
   const [shake, setShake] = useState(false);
-  const [moveHistory, setMoveHistory] = useState([]);
-  const [gameOver, setGameOver] = useState(false);
-  const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState([]);
-  const [mistakes, setMistakes] = useState(4);
-  const [submittedSets, setSubmittedSets] = useState([]);
-  const [guessedGroups, setGuessedGroups] = useState([]);
-  const [terms, setTerms] = useState(initialTerms);
-  // const [terms, setTerms] = useState(() => {
-  //   const savedTerms = localStorage.getItem('terms');
-  //   return savedTerms ? JSON.parse(savedTerms) : initialTerms;
-  // });
-  // const [guessedGroups, setGuessedGroups] = useState(() => {
-  //   const savedGroups = localStorage.getItem('guessedGroups');
-  //   return savedGroups ? JSON.parse(savedGroups) : [];
-  // });
-  // const [mistakes, setMistakes] = useState(() => {
-  //   const savedMistakes = localStorage.getItem('mistakes');
-  //   return savedMistakes !== null ? parseInt(savedMistakes, 10) : 4;
-  // });
-  // const [submittedSets, setSubmittedSets] = useState(() => {
-  //   const savedSets = localStorage.getItem('submittedSets');
-  //   return savedSets ? JSON.parse(savedSets) : [];
-  // });
+  // const [selectedTerms, setSelectedTerms] = useState([]);    
+  // const [moveHistory, setMoveHistory] = useState([]);
+  // const [gameOver, setGameOver] = useState(false);
+  // const [showResultsPopup, setShowResultsPopup] = useState(false);
+  // const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState([]);
+  // const [mistakes, setMistakes] = useState(4);
+  // const [submittedSets, setSubmittedSets] = useState([]);
+  // const [guessedGroups, setGuessedGroups] = useState([]);
+  // const [terms, setTerms] = useState(initialTerms);
+  const [gameOver, setGameOver] = useState(() => {
+    const saved = localStorage.getItem(`gameOver-${gameSessionId}`);
+    return saved ? JSON.parse(saved) : false;
+  });
+  
+  const [showResultsPopup, setShowResultsPopup] = useState(() => {
+    const saved = localStorage.getItem(`showResultsPopup-${gameSessionId}`);
+    return saved ? JSON.parse(saved) : false;
+  });
+  
+  const [moveHistory, setMoveHistory] = useState(() => {
+    const saved = localStorage.getItem(`moveHistory-${gameSessionId}`);
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+  const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState(() => {
+    const savedData = localStorage.getItem(`remainingGroupsToReveal-${gameSessionId}`);
+    return savedData ? JSON.parse(savedData) : [];
+  });
+  
+  const [selectedTerms, setSelectedTerms] = useState(() => {
+    const savedData = localStorage.getItem(`selectedTerms-${gameSessionId}`);
+    return savedData ? JSON.parse(savedData) : [];
+  });
+  
+  const [terms, setTerms] = useState(() => {
+    const savedTerms = localStorage.getItem(`terms-${gameSessionId}`);
+    return savedTerms ? JSON.parse(savedTerms) : initialTerms;
+  });
+  
+  const [guessedGroups, setGuessedGroups] = useState(() => {
+    const savedGroups = localStorage.getItem(`guessedGroups-${gameSessionId}`);
+    return savedGroups ? JSON.parse(savedGroups) : [];
+  });
+  
+  const [mistakes, setMistakes] = useState(() => {
+    const savedMistakes = localStorage.getItem(`mistakes-${gameSessionId}`);
+    return savedMistakes !== null ? parseInt(savedMistakes, 10) : 4;
+  });
+  
+  const [submittedSets, setSubmittedSets] = useState(() => {
+    const savedSets = localStorage.getItem(`submittedSets-${gameSessionId}`);
+    return savedSets ? JSON.parse(savedSets) : [];
+  });
+  
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
-  // useEffect(() => {
-  //   localStorage.setItem('terms', JSON.stringify(terms));
-  // }, [terms]);
+  useEffect(() => {
+    localStorage.setItem(`terms-${gameSessionId}`, JSON.stringify(terms));
+  }, [terms, gameSessionId]);
   
-  // useEffect(() => {
-  //   localStorage.setItem('mistakes', mistakes.toString());
-  // }, [mistakes]);
+  useEffect(() => {
+    localStorage.setItem(`mistakes-${gameSessionId}`, mistakes.toString());
+  }, [mistakes, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`submittedSets-${gameSessionId}`, JSON.stringify(submittedSets));
+  }, [submittedSets, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`guessedGroups-${gameSessionId}`, JSON.stringify(guessedGroups));
+  }, [guessedGroups, gameSessionId]);
 
-  // useEffect(() => {
-  //   localStorage.setItem('submittedSets', JSON.stringify(submittedSets));
-  // }, [submittedSets]);
+  useEffect(() => {
+    localStorage.setItem(`remainingGroupsToReveal-${gameSessionId}`, JSON.stringify(remainingGroupsToReveal));
+  }, [remainingGroupsToReveal, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`selectedTerms-${gameSessionId}`, JSON.stringify(selectedTerms));
+  }, [selectedTerms, gameSessionId]);  
 
-  // useEffect(() => {
-  //   localStorage.setItem('guessedGroups', JSON.stringify(guessedGroups));
-  // }, [guessedGroups]);
+  useEffect(() => {
+    localStorage.setItem(`gameOver-${gameSessionId}`, JSON.stringify(gameOver));
+  }, [gameOver, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`showResultsPopup-${gameSessionId}`, JSON.stringify(showResultsPopup));
+  }, [showResultsPopup, gameSessionId]);
+  
+  useEffect(() => {
+    localStorage.setItem(`moveHistory-${gameSessionId}`, JSON.stringify(moveHistory));
+  }, [moveHistory, gameSessionId]);
+
+  useEffect(() => {
+    const updatedTerms = shuffleArray(initialTerms.filter(term => 
+      !guessedGroups.some(group => group.terms.includes(term))
+    ));
+    
+    setTerms(updatedTerms);
+    localStorage.setItem(`terms-${gameSessionId}`, JSON.stringify(updatedTerms));
+  }, [guessedGroups, gameSessionId]);
+  
+
+  useEffect(() => {
+    const initTerms = shuffleArray(JSON.parse(localStorage.getItem(`terms-${gameSessionId}`)) || initialTerms);
+    const initGuessedGroups = JSON.parse(localStorage.getItem(`guessedGroups-${gameSessionId}`)) || [];
+    
+    setTerms(initTerms);
+    setGuessedGroups(initGuessedGroups);
+    
+  }, []);
+  
+  
 
   const getVictoryMessage = (mistakesLeft) => {
     switch(mistakesLeft) {
@@ -166,10 +238,13 @@ const ConnectionsPage = () => {
         setGuessIncorrect(false);
       }, 850);
         } else {
-          const updatedGroup = { ...foundGroup, terms: selectedTerms };
-          setGuessedGroups([...guessedGroups, updatedGroup]);
-          setTerms(terms.filter(term => !foundGroup.terms.includes(term)));
-          setSelectedTerms([]);
+            const updatedTerms = terms.filter(term => !foundGroup.terms.includes(term));
+            const updatedGuessedGroups = [...guessedGroups, { ...foundGroup, terms: selectedTerms }];            
+            setTerms(updatedTerms);
+            setGuessedGroups(updatedGuessedGroups);
+            localStorage.setItem(`terms-${gameSessionId}`, JSON.stringify(updatedTerms));
+            localStorage.setItem(`guessedGroups-${gameSessionId}`, JSON.stringify(updatedGuessedGroups));
+            setSelectedTerms([]);
 
           if (guessedGroups.length + 1 === correctGroups.length) {
             setGameOver(true);
@@ -466,6 +541,7 @@ const ConnectionsPage = () => {
           let isAnimating = selectedTerms.indexOf(term) === animateIndex;
           let shouldShake = isSelected && guessIncorrect;
           let isCooldown = cooldown;
+
     return (
       <div key={index} 
            className={`term-block ${isSelected ? 'selected' : ''} ${isAnimating ? 'jump-animation' : ''} ${shouldShake ? 'shake-animation' : ''} ${isSubmitting ? 'no-hover' : ''} ${isCooldown ? 'no-hover' : ''}`} 
