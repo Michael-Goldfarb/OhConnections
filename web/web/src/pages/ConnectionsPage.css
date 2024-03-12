@@ -242,7 +242,6 @@ h1 {
   padding: .375vh 0; 
 }
 
-
 .results-popup {
   position: fixed;
   top: 0;
@@ -284,7 +283,6 @@ h1 {
   font-size: 3vh;
   cursor: pointer;
 }
-
 
 .game-button {
   padding: 1.25vh 2.5vh;
@@ -379,7 +377,7 @@ h1 {
 
 .game-number {
   font-size: 2vh;
-  margin-top: -2vh;
+  margin-top: -1vh;
   margin-bottom: 2vh;
   font-weight: 500;
 }
