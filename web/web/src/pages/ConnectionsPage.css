@@ -29,40 +29,40 @@ body, html {
 
 .connections-game {
   position: relative;
-  max-width: 600px;
+  max-width: 73.80073800738008vh;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2.4600246002460024vh;
   text-align: center;
 }
 
 h1 {
-  font-size: 24px;
-  margin-top: -20px;
-  margin-bottom: 20px;
+  font-size: 3.0vh;
+  margin-top: -2.4600246002460024vh;
+  margin-bottom: 2.4600246002460024vh;
 }
 
 .terms-grid {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 1vh;
+  margin-bottom: 2vh;
 }
 
 .term-block {
   position: relative;
   background: #cccccc;
   border: 1px solid #ddd;
-  padding: 10px; 
-  width: 135px; 
-  height: 135px; 
+  padding: 1vh; 
+  width: 16.6vh; 
+  height: 16.6vh; 
   display: flex; 
   justify-content: center;
   align-items: center;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  border-radius: 10px;
+  border-radius: 1vh;
   box-sizing: border-box;
 }
 
@@ -70,8 +70,8 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1vh;
+  border-top-right-radius: 1vh;
 }
 
 .text-overlay {
@@ -86,8 +86,8 @@ h1 {
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
   overflow: hidden;
   text-overflow: ellipsis; 
   white-space: nowrap;
@@ -101,7 +101,7 @@ h1 {
 
 .term-block:hover {
   border-color: #cccccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px .5vh 1vh rgba(0, 0, 0, 0.2);
   transform: scale(1.03);
 }
 
@@ -113,31 +113,31 @@ h1 {
 
 .mistakes-section {
   text-align: center;
-  font-size: 17px;
-  margin-bottom: 12px; 
+  font-size: 2.45vh;
+  margin-bottom: 1.5vh; 
 }
 
 .game-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 2.5vh;
 }
 
 .game-controls button {
-  padding: 10px 20px;
+  padding: 1.25vh 2.5vh;
   cursor: pointer;
   background-color: #444;
   color: white;
   border: none;
-  border-radius: 5px;
-  margin-right: 10px;
+  border-radius: .6vh;
+  margin-right: 1.2vh;
   transition: background-color 0.3s;
-  height: 40px; 
-  width: 200px;
-  border-radius: 20px;
+  height: 5vh; 
+  width: 25vh;
+  border-radius: 2.5vh;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 1.9vh;
 }
 
 .game-controls button:hover {
@@ -152,10 +152,10 @@ h1 {
 }
 
 .baseball-icon {
-  width: 23px;
+  width: 2.6vh;
   height: auto;
   display: inline-block;
-  margin-right: 4px;
+  margin-right: .5vh;
 }
 
 .popup-message {
@@ -165,15 +165,15 @@ h1 {
   transform: translate(-50%, -100%);
   background-color: #f44336;
   color: white;
-  padding: 8px;
-  border-radius: 5px;
-  margin-bottom: -25px;
+  padding: 1vh;
+  border-radius: .65vh;
+  margin-bottom: -3vh;
   z-index: 10; 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: calc(150% - 10px);
-  max-width: 350px;
+  width: calc(150% - 1.25vh);
+  max-width: 43.75vh;
 }
 
 .popup-show {
@@ -183,11 +183,11 @@ h1 {
 .guessed-group-combined {
   position: relative;
   color: white;
-  height: 135px;
-  width: 102%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  height: 16.6vh;
+  width: 101%;
+  padding: 1.25vh;
+  margin-bottom: 1.25vh;
+  border-radius: .625vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -199,34 +199,34 @@ h1 {
   justify-content: space-evenly;
   align-items: flex-end;
   height: 100%;
-  margin-bottom: -20px;
-  gap: 28px;
+  margin-bottom: -2.5vh;
+  gap: 3.9vh;
 }
 
 .player-image-container {
   position: relative;
   width: 100px;
-  height: calc(100% - 10px);
-  margin-bottom: -10px;
+  height: calc(100% - 1.25vh);
+  margin-bottom: -1.5vh;
 }
 
 .guessed-player-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: .625vh;
 }
 
 .player-name-overlay {
   position: absolute;
   bottom: 0;
-  left: -15px;
-  width: 127px;
-  padding: 2px 0;
+  left: -1.0vh;
+  width: 14.0vh;
+  padding: .25vh 0;
   background-color: #000;
   color: white;
   text-align: center;
-  font-size: 9.6px;
+  font-size: 1.2vh;
   font-weight: 550;
   overflow: hidden;
 }
@@ -234,12 +234,12 @@ h1 {
 .group-description {
   position: absolute;
   width: 100%;
-  bottom: 105px;
+  bottom: 13.125vh;
   text-align: center;
   color: black;
   font-weight: bold;
-  font-size: 18px;
-  padding: 3px 0; 
+  font-size: 2.25vh;
+  padding: .375vh 0; 
 }
 
 
@@ -260,13 +260,13 @@ h1 {
   position: relative;
   background: #fff;
   color: #333;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 5vh;
+  border-radius: 1vh;
+  box-shadow: 0 .5vh 1vh rgba(0, 0, 0, 0.1);
   width: 25%;
-  max-width: 1200px;
-  min-height: 200px;
-  max-height: 800px;
+  max-width: 150vh;
+  min-height: 25vh;
+  max-height: 100vh;
   overflow-y: auto;
 }
 
@@ -276,42 +276,42 @@ h1 {
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 1.25vh;
+  right: 1.25vh;
   color: black;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 3vh;
   cursor: pointer;
 }
 
 
 .game-button {
-  padding: 10px 20px;
+  padding: 1.25vh 2.5vh;
   cursor: pointer;
   background-color: #444;
   color: white;
   border: none;
-  border-radius: 20px;
-  margin-right: 10px;
+  border-radius: 2.5vh;
+  margin-right: 1.2vh;
   transition: background-color 0.3s;
-  height: 40px;
-  width: 200px;
+  height: 5vh;
+  width: 25vh;
   box-sizing: border-box;
-  font-size: 14px;
-  margin-bottom: 40px;
-  margin-bottom: 35px;
+  font-size: 1.75vh;
+  margin-bottom: 5vh;
+  margin-bottom: 100.375vh;
 }
 
 .copy-summary-button {
-  padding: 10px 20px;
-  margin-top: 25px;
+  padding: 1.25vh 2.5vh;
+  margin-top: 3vh;
   margin-bottom: -1rem;
   cursor: pointer;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: .625vh;
   transition: background-color 0.3s;
 }
 
@@ -330,18 +330,18 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 1.25vh;
 }
 
 .difficulty-color {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 2.5vh;
+  height: 2.5vh;
+  margin-right: 1vh;
 }
 
 .difficulty-name {
-  font-size: 15px;
-  min-width: 80px;
+  font-size: 2vh;
+  min-width: 10vh;
   font-weight: 500;
   text-align: left;
 }
@@ -350,7 +350,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 2.5vh;
 }
 
 .summary-row {
@@ -358,29 +358,29 @@ h1 {
 }
 
 .summary-block {
-  width: 35px;
-  height: 35px;
-  margin: 2px;
+  width: 4.5vh;
+  height: 4.5vh;
+  margin: .25vh;
 }
 
 .next-puzzle-countdown {
   margin-top: 2.0rem;
   color: #333;
-  font-size: 19px;
+  font-size: 2.5vh;
   font-weight: 500;
 }
 
 .message-header {
-  font-size: 26px;
+  font-size: 3.25vh;
   font-weight: 800;
-  margin-top: -30px;
+  margin-top: -3vh;
   margin-bottom: 0px;
 }
 
 .game-number {
-  font-size: 16px;
-  margin-top: -15px;
-  margin-bottom: 15px;
+  font-size: 2vh;
+  margin-top: -2vh;
+  margin-bottom: 2vh;
   font-weight: 500;
 }
 
@@ -394,8 +394,8 @@ h1 {
 .header-container::before {
   content: '';
   visibility: hidden;
-  width: 46.5px;
-  height: -50px;
+  width: 6vh;
+  height: -6.3vh;
   display: block;
 }
 
@@ -406,34 +406,34 @@ h1 {
 .how-to-play-content {
   background: #fff;
   color: #333;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2.5vh;
+  border-radius: 1vh;
+  box-shadow: 0 .5vh 1vh rgba(0, 0, 0, 0.1);
   width: auto;
-  max-width: 600px;
+  max-width: 75vh;
 }
 
 .how-to-play-button {
-  padding: 10px 20px;
+  padding: 1.25vh 2.5vh;
   cursor: pointer;
   background-color: #444;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: .625vh;
   margin-right: 0px;
-  margin-top: -25px;
+  margin-top: -3vh;
   transition: background-color 0.3s;
-  height: 40px; 
-  width: 90px;
-  border-radius: 20px;
+  height: 5vh; 
+  width: 11.25vh;
+  border-radius: 2.5vh;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 1.75vh;
 }
 
 .button-placeholder {
   visibility: hidden;
-  width: 46.5px;
-  height: -50px;
+  width: 6vh;
+  height: -6.3vh;
 }
 
 .how-to-play-popup {
@@ -453,7 +453,7 @@ h1 {
   text-align: center;
   position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  font-size: 1.8vh;
 }
 
 .how-to-play-content p {
@@ -462,27 +462,27 @@ h1 {
 }
 
 .how-to-play-content h1 {
-  margin-top: -10px;
+  margin-top: -1.25vh;
   font-weight: bold;
 }
 
 .example-section {
-  margin: 14px 0;
+  margin: 1.8vh 0;
 }
 
 .example-group {
-  margin-bottom: 30px;
+  margin-bottom: 2.8vh;
 }
 
 .player-images {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 1.25vh;
 }
 
 .player-images img {
-  width: 100px;
+  width: 12.5vh;
   height: auto;
 }
 
