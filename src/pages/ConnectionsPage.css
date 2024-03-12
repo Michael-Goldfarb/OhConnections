@@ -2132,33 +2132,63 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
 @media (max-height: 800px) and (max-width: 400px) {
 
   
   .connections-game {
-    width: 32vh;
+    width: 91vw;
     position: relative;
     margin: 0 auto;
-    padding: 2.5380710659898478vh;
     text-align: center;
+    overflow: auto;
   }
   
   h1 {
     font-size: 2.045685279187817vh;
     margin-top: .5380710659898478vh;
     width: 100%;
-    margin-bottom: 4.5380710659898478vh;
+    margin-bottom: 7.5380710659898478vh;
   }
   
   .terms-grid {
-    gap: 1vh;
-    margin-bottom: 2.6vh;
+    gap: .5vh;
+    margin-bottom: 4.6vh;
+  }
+
+  .term-block {
+    position: relative;
+    padding: 1vh; 
+    width: 15vw; 
+    height: 15vw; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 1vh;
+    box-sizing: border-box;
   }
   
-  .term-block {
-    aspect-ratio: 1 / 1;
-    height: 6vh;
-    width: 6vh;
+  .term-image {
+    width: 140%;
+    height: 140%;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    bottom: 2;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    font-size: .85vh;
   }
   
   .mistakes-section {
@@ -2194,7 +2224,7 @@ h1 {
   }
   
   .guessed-group-combined {
-    height: 6vh;
+    height: 15vw;
     width: 102%;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
@@ -2219,8 +2249,8 @@ h1 {
     border-radius: 1.5vh;
     margin-right: 1vh;
     height: 5.738880918220947vh;
-    width: 28.694404591104735vh;
-    font-size: 1.7vh;
+    width: 12.694404591104735vh;
+    font-size: 1.3vh;
     margin-bottom: 109.738880918220947vh;
   }
   
@@ -2266,6 +2296,47 @@ h1 {
     margin-top: -4vh;
     margin-bottom: 0px;
   }
+
+  .group-description {
+    position: absolute;
+    width: 100%;
+    bottom: 5.825vh;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 1.25vh;
+    padding: .375vh 0; 
+  }
+
+  .group-images {
+    display: flex;
+    height: 100%;
+    margin-bottom: -2vh;
+    gap: 3.7vh;
+  }
+  
+  .player-image-container {
+    position: relative;
+    width: 4vh;
+    height: 6.4vh;
+    margin-bottom: -2.1vh;
+  }
+  
+  .guessed-player-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .player-name-overlay {
+    position: absolute;
+    bottom: 0;
+    left: -1.88vh;
+    width: 8.5vh;
+    font-size: .64vh;
+    font-weight: 550;
+  }
   
   .game-number {
     font-size: 2vh;
@@ -2274,8 +2345,8 @@ h1 {
   }
   
   .header-container::before {
-    width: 46.5px;
-    height: -50px;
+    width: 6vh;
+    height: -6.5vh;
   }
 
   .how-to-play-content {
@@ -2288,10 +2359,10 @@ h1 {
     padding: 1vh 2vh;
     border-radius: 5px;
     margin-top: -5vh;
-    height: 6vh; 
+    height: 4vh; 
     width: 10vh;
     border-radius: 20px;
-    font-size: 1.55vh;
+    font-size: 1.005vh;
   }
   
   .how-to-play-popup {
@@ -2332,3 +2403,20 @@ h1 {
     width: 8vh;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
