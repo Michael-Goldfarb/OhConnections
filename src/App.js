@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Connections03152024 from "./pages/inputs/03-15-2024/ConnectionsPage.js";
 import Connections03162024 from "./pages/inputs/03-16-2024/ConnectionsPage.js";
 import Connections03172024 from "./pages/inputs/03-17-2024/ConnectionsPage.js";
