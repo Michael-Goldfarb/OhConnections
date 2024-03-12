@@ -568,21 +568,21 @@ const ConnectionsPage = () => {
       <div className="game-controls">
         <button 
           onClick={handleShuffle}
-          disabled={isSubmitting || shake || cooldown} // Include cooldown in the condition
+          disabled={isSubmitting || shake || cooldown}
           style={{ opacity: (isSubmitting || shake || cooldown) ? 0.5 : 1 }}>
           Shuffle
         </button>
 
         <button 
           onClick={() => setSelectedTerms([])}
-          disabled={isSubmitting || shake || cooldown || selectedTerms.length === 0} // Include cooldown in the condition
+          disabled={isSubmitting || shake || cooldown || selectedTerms.length === 0}
           style={{ opacity: (isSubmitting || shake || cooldown) ? 0.5 : 1 }}>
           Deselect All
         </button>
 
         <button 
           onClick={handleSubmit}
-          disabled={isSubmitting || shake || cooldown || selectedTerms.length !== 4} // Include cooldown in the condition
+          disabled={isSubmitting || shake || cooldown || selectedTerms.length !== 4}
           style={{ opacity: (isSubmitting || shake || cooldown) ? 0.5 : 1 }}>
           Submit
         </button>
@@ -594,6 +594,7 @@ const ConnectionsPage = () => {
     )}
     {showResultsPopup && renderResultsPopup()}
     {renderHowToPlayPopup()}
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScf3nrR79wVz0ZjBy6LaH18Xi9gH6RfwU8GMd3-O-luSJjB-Q/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" className="suggestions-link">Suggestions</a>
   </div>
 );
 
