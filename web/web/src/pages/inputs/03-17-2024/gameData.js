@@ -36,8 +36,20 @@ export const playerImages = {
   };
 
 
-  export const initialTerms = ['Jurickson Profar', 'Jonathan Schoop', 'Michael Conforto', 'Cody Bellinger', 'Carlos Carrasco', 'Liam Hendriks', 'Justin Verlander', 'Trey Mancini', 'Whit Merrifield', 'Luis Arraez', 'Freddie Freeman', 'Ronald Acuña Jr.', 'DJ LeMahieu', 'Gio Urshela', 'Luke Voit', 'Gleyber Torres'];
-  
+  const shuffleArray = (array) => {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  };   
+
+  const initialTermsUnshuffled = ['Jurickson Profar', 'Jonathan Schoop', 'Michael Conforto', 'Cody Bellinger', 'Carlos Carrasco', 'Liam Hendriks', 'Justin Verlander', 'Trey Mancini', 'Whit Merrifield', 'Luis Arraez', 'Freddie Freeman', 'Ronald Acuña Jr.', 'DJ LeMahieu', 'Gio Urshela', 'Luke Voit', 'Gleyber Torres'];
+  export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
+
   export const correctGroups = [
     { number: 3, 
         description: '2021 YANKEES INFIELDERS', 

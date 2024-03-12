@@ -118,9 +118,9 @@ const ConnectionsPage = () => {
   }, [moveHistory, gameSessionId]);
 
   useEffect(() => {
-    const updatedTerms = shuffleArray(initialTerms.filter(term => 
+    const updatedTerms = initialTerms.filter(term => 
       !guessedGroups.some(group => group.terms.includes(term))
-    ));
+    );
     
     setTerms(updatedTerms);
     localStorage.setItem(`terms-${gameSessionId}`, JSON.stringify(updatedTerms));
@@ -129,11 +129,9 @@ const ConnectionsPage = () => {
 
   useEffect(() => {
     const initTerms = shuffleArray(JSON.parse(localStorage.getItem(`terms-${gameSessionId}`)) || initialTerms);
-    const initGuessedGroups = JSON.parse(localStorage.getItem(`guessedGroups-${gameSessionId}`)) || [];
-    
+    const initGuessedGroups = JSON.parse(localStorage.getItem(`guessedGroups-${gameSessionId}`)) || [];   
     setTerms(initTerms);
-    setGuessedGroups(initGuessedGroups);
-    
+    setGuessedGroups(initGuessedGroups);   
   }, []);
   
   

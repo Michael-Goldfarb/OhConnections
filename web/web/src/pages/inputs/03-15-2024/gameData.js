@@ -36,7 +36,19 @@ export const playerImages = {
   };
 
 
-  export const initialTerms = ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds', 'Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman', 'Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette', 'Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'];
+  const shuffleArray = (array) => {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }; 
+
+  const initialTermsUnshuffled = ['Albert Pujols', 'Babe Ruth', 'Hank Aaron', 'Barry Bonds', 'Ronald Acuña Jr.', 'Shohei Ohtani', 'Aaron Judge', 'Freddie Freeman', 'Fernando Tatis Jr.', 'Ke\'Bryan Hayes', 'Cavan Biggio', 'Bo Bichette', 'Adam Jones', 'Christian Yelich', 'Nolan Arenado', 'Eric Hosmer'];
+  export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
   
   export const correctGroups = [
     { number: 1, 
