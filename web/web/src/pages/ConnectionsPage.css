@@ -21,6 +21,21 @@
   animation: jump 0.5s ease;
 }
 
+.suggestions-link {
+  position: fixed;
+  display: block;
+  bottom: 2vh;
+  right: 2vh;
+  color: #007bff;
+  font-size: 1.7vh;
+  text-decoration: underline;
+  z-index: 1000;
+}
+
+.suggestions-link:hover {
+  text-decoration: underline;
+}
+
 body, html {
   margin: 0;
   padding: 0;
