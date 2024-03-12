@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "puppeteer": "^20.7.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

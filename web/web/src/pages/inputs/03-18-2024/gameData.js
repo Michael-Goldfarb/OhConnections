@@ -1,38 +1,38 @@
-import juricksonProfar from './juricksonprofar.png';
-import jonathanSchoop from './jonathanschoop.png';
-import michaelConforto from './michaelconforto.png';
-import codyBellinger from './codybellinger.png';
-import lukeVoit from './lukevoit.png';
-import djLemahieu from './djlemahieu.png';
-import gleyberTorres from './gleybertorres.png';
-import gioUrshela from './giourshela.png';
-import liamHendriks from './liamhendriks.png';
-import treyMancini from './treymancini.png';
-import justinVerlander from './justinverlander.png';
-import carlosCarrasco from './carloscarrasco.png';
-import luisArraez from './luisarraez.png';
-import whitMerrifield from './whitmerrifield.png';
-import freddieFreeman from '../../../images/examples/freddiefreeman.png';
-import ronaldAcunaJr from './ronaldacunajr.png';
+import mookieBetts from './mookiebetts.png';
+import jeterDowns from './jeterdowns.png';
+import alexVerdugo from './alexverdugo.png';
+import davidPrice from './davidprice.png';
+import tommyPham from './tommypham.png';
+import evanLongoria from './evanlongoria.png';
+import blakeSnell from './blakesnell.png';
+import chrisArcher from './chrisarcher.png';
+import jorgeSoler from './jorgesoler.png';
+import coreySeager from './coreyseager.png';
+import jeremyPena from './jeremypena.png';
+import stephenStrasburg from './stephenstrasburg.png';
+import edwinDiaz from './edwindiaz.png';
+import aaronNola from './aaronnola.png';
+import yuliGurriel from './yuligurriel.png';
+import willsonContreras from './willsoncontreras.png';
 
 
 export const playerImages = {
-    'Jurickson Profar': juricksonProfar,
-    'Jonathan Schoop': jonathanSchoop,
-    'Michael Conforto': michaelConforto, 
-    'Cody Bellinger': codyBellinger, 
-    'Luke Voit': lukeVoit, 
-    'DJ LeMahieu': djLemahieu, 
-    'Gleyber Torres': gleyberTorres, 
-    'Gio Urshela': gioUrshela, 
-    'Carlos Carrasco': carlosCarrasco, 
-    'Justin Verlander': justinVerlander, 
-    'Trey Mancini': treyMancini, 
-    'Liam Hendriks': liamHendriks, 
-    'Whit Merrifield': whitMerrifield, 
-    'Luis Arraez': luisArraez, 
-    'Freddie Freeman': freddieFreeman, 
-    'Ronald Acuña Jr.': ronaldAcunaJr
+    'Mookie Betts': mookieBetts,
+    'Jeter Downs': jeterDowns,
+    'Alex Verdugo': alexVerdugo, 
+    'David Price': davidPrice, 
+    'Tommy Pham': tommyPham, 
+    'Evan Longoria': evanLongoria, 
+    'Blake Snell': blakeSnell, 
+    'Chris Archer': chrisArcher, 
+    'Jorge Soler': jorgeSoler, 
+    'Corey Seager': coreySeager, 
+    'Jeremy Peña': jeremyPena, 
+    'Stephen Strasburg': stephenStrasburg, 
+    'Edwin Díaz': edwinDiaz, 
+    'Aaron Nola': aaronNola, 
+    'Yuli Gurriel': yuliGurriel, 
+    'Willson Contreras': willsonContreras
   };
 
 
@@ -47,28 +47,28 @@ export const playerImages = {
     return array;
   };   
 
-  const initialTermsUnshuffled = ['Jurickson Profar', 'Jonathan Schoop', 'Michael Conforto', 'Cody Bellinger', 'Carlos Carrasco', 'Liam Hendriks', 'Justin Verlander', 'Trey Mancini', 'Whit Merrifield', 'Luis Arraez', 'Freddie Freeman', 'Ronald Acuña Jr.', 'DJ LeMahieu', 'Gio Urshela', 'Luke Voit', 'Gleyber Torres'];
+  const initialTermsUnshuffled = ['Chris Archer', 'Evan Longoria', 'Blake Snell', 'Tommy Pham', 'Jeremy Peña', 'Stephen Strasburg', 'Jorge Soler', 'Corey Seager', 'Alex Verdugo', 'David Price', 'Jeter Downs', 'Mookie Betts', 'Edwin Díaz', 'Willson Contreras', 'Yuli Gurriel', 'Aaron Nola'];
   export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
   
   export const correctGroups = [
     { number: 4, 
-        description: '2021 YANKEES INFIELDERS', 
-        terms: ['Luke Voit', 'DJ LeMahieu', 'Gleyber Torres', 'Gio Urshela'],  
+        description: 'TRADED FROM THE RAYS', 
+        terms: ['Chris Archer', 'Tommy Pham', 'Blake Snell', 'Evan Longoria'],  
         color: '#4CAF50' },
 
     { number: 4,
-         description: 'RECENT 200+ HITS IN A SEASON', 
-         terms: ['Ronald Acuña Jr.', 'Luis Arraez', 'Freddie Freeman', 'Whit Merrifield'],  
+         description: 'RECENT WORLD SERIES MVPS', 
+         terms: ['Corey Seager', 'Jorge Soler', 'Stephen Strasburg', 'Jeremy Peña'],  
          color: '#e5de00' },
 
     { number: 4, 
-        description: 'RECENT AL COMEBACK PLAYERS OF THE YEAR', 
-        terms: ['Liam Hendriks', 'Trey Mancini', 'Justin Verlander', 'Carlos Carrasco'], 
+        description: 'PLAYERS IN MOOKIE BETTS TRADE', 
+        terms: ['Mookie Betts', 'Jeter Downs', 'David Price', 'Alex Verdugo'], 
         color: '#e27602' },
     
     { number: 4, 
-        description: 'PLAYED IN THE LITTLE LEAGUE WORLD SERIES', 
-        terms: ['Michael Conforto', 'Cody Bellinger', 'Jonathan Schoop', 'Jurickson Profar'], 
+        description: 'BROTHER PLAYED IN THE MLB', 
+        terms: ['Edwin Díaz', 'Aaron Nola', 'Yuli Gurriel', 'Willson Contreras'], 
         color: '#de0a26' }]
   
   
