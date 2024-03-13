@@ -772,7 +772,7 @@ h1 {
     font-size: 1.5vh;
   }
   .results-popup {
-    left: -21vh;
+    left: -22vh;
   }
   .text-overlay {
     width: 100%;
@@ -882,6 +882,9 @@ h1 {
     left: -0.58vh;
     width: 9.85vh;
     font-size: .7vh;
+  }
+  .results-popup {
+    left: -20vh;
   }
 }
 
@@ -1495,6 +1498,16 @@ h1 {
 
 @media (min-height: 600px) and (max-width: 380px) {
   .results-popup {
-    left: -30.7vh;
+    left: -32.7vh;
+  }
+}
+
+
+
+
+
+@media (min-height: 840px) and (max-height: 850px) and (max-width: 399px) {
+  .results-popup {
+    left: -24.7vh;
   }
 }
