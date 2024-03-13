@@ -22,14 +22,14 @@
 }
 
 .suggestions-link {
-  position: fixed;
   display: block;
-  bottom: 2vh;
-  right: 2vh;
+  margin-top: 4vh; /* Adjust as needed for spacing */
+  margin-right: 2vh; /* To keep it towards the right; adjust based on layout */
   color: #007bff;
   font-size: 1.7vh;
   text-decoration: underline;
-  z-index: 1000;
+  z-index: 1000; /* May not be needed depending on your layout */
+  align-self: flex-end; /* If its parent is a flex container */
 }
 
 .suggestions-link:hover {
@@ -39,7 +39,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .connections-game {
@@ -55,7 +55,7 @@ h1 {
   width: 100%;
   margin: 0;
   padding: 1vh 0;
-  margin-top: -4.5vh;
+  margin-top: -3.5vh;
   margin-bottom: 1vh;
   font-size: 3vh;
 }
@@ -512,7 +512,7 @@ h1 {
     border-radius: 20px;
     box-sizing: border-box;
     font-size: 12px;
-    margin-bottom: 100px
+    margin-bottom: 0vh;
   }
 
   .baseball-icon {
