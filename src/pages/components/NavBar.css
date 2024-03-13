@@ -5,6 +5,7 @@ nav.bg-gray-800 {
   height: auto;
   min-height: 90px;
   display: flex;
+  background-color: #2D3748;
   justify-content: center;
   align-items: center;
 }
@@ -210,14 +211,6 @@ nav.bg-gray-800 {
   border: none;
   font-size: 3vh;
   cursor: pointer;
-}
-
-.hows-to-play-nav-button:hover {
-  background-color: #0056b3;
-}
-
-.hows-to-play-button:hover {
-  background-color: #555;
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
