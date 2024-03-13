@@ -783,6 +783,21 @@ h1 {
 }
 
 
+
+@media (min-height: 400px) and (min-height: 800px) and (max-width: 600px) {
+  .terms-grid {
+    gap: 1vh;
+    width: 100%;
+  }
+  .term-block {
+    aspect-ratio: 1 / 1;
+    height: 10.30vh;
+    width: 10.30vh;
+  }
+}
+
+
+
 @media (min-height: 900px) and (max-width: 600px) {
   h1 {
     margin-bottom: 13.8vw;
@@ -800,6 +815,16 @@ h1 {
   .group-description {
     bottom: 6.025vh;
     font-size: 1.5vh;
+  }
+  .terms-grid {
+    gap: 1vh;
+    margin-bottom: 2.9vh;
+    width: 100%;
+  }
+  .term-block {
+    aspect-ratio: 1 / 1;
+    height: 10.10vh;
+    width: 10.10vh;
   }
 }
 
@@ -1212,14 +1237,13 @@ h1 {
 @media (max-height: 800px) and (max-width: 600px) {
   
   .connections-game {
-    /* width: 50vh; */
     position: relative;
     text-align: center;
     width: 100vw;
     max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
   
   h1 {
@@ -1367,6 +1391,20 @@ h1 {
 }
 
 
+
+
+
+@media (max-height: 800px) and (max-width: 600px) {
+  .connections-game {
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+}
 
 
 
