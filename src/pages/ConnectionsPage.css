@@ -937,7 +937,7 @@ h1 {
 
 @media (min-height: 800px) and (max-width: 600px) {
   h1 {
-    margin-bottom: 15vw;
+    margin-bottom: 10.0vw;
     margin-top: 5vw;
   }
   .game-controls {
@@ -945,6 +945,21 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-left: 10px;
+  }
+  .game-button {
+    margin-top: 60px;
+    margin-bottom: 130px;
+  }
+  .group-description {
+    bottom: 5.925vh;
+  }
+  .results-popup {
+    left: -21vh;
+  }
+  .text-overlay {
+    width: 100%;
+    height: 10%;
+    font-size: .8vh;
   }
 }
 
