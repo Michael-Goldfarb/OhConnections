@@ -794,6 +794,35 @@ h1 {
     height: 10.30vh;
     width: 10.30vh;
   }
+  .guessed-group-combined {
+    color: white;
+    height: 10.30;
+    right: 1.7vh;
+    width: 109.5%;
+    padding: 1vh;
+    margin-bottom: 1vh;
+    border-radius: .4vh;
+  }
+  .group-images {
+    height: 100%;
+    gap: 1vh;
+  }
+  .player-image-container {
+    width: 9vh;
+    height: 7vh;
+    bottom: 1.1vh;
+    margin-bottom: -2.1vh;
+  }
+  .guessed-player-image {
+    width: 100%;
+    height: 100%;
+  } 
+  .player-name-overlay {
+    bottom: 0vh;
+    left: -0.58vh;
+    width: 9.85vh;
+    font-size: .7vh;
+  }
 }
 
 
@@ -825,6 +854,35 @@ h1 {
     aspect-ratio: 1 / 1;
     height: 10.10vh;
     width: 10.10vh;
+  }
+  .guessed-group-combined {
+    color: white;
+    height: 10.10;
+    right: 2.45vh;
+    width: 114.5%;
+    padding: 1vh;
+    margin-bottom: 1vh;
+    border-radius: .4vh;
+  }
+  .group-images {
+    height: 100%;
+    gap: 1vh;
+  }
+  .player-image-container {
+    width: 9vh;
+    height: 7vh;
+    bottom: 1.1vh;
+    margin-bottom: -2.1vh;
+  }
+  .guessed-player-image {
+    width: 100%;
+    height: 100%;
+  } 
+  .player-name-overlay {
+    bottom: 0vh;
+    left: -0.58vh;
+    width: 9.85vh;
+    font-size: .7vh;
   }
 }
 
@@ -1304,18 +1362,46 @@ h1 {
   }
   
   .guessed-group-combined {
-    height: 10.7vh;
-    width: 102%;
+    height: 12.69vh;
+    width: 106.5%;
+    left: -1.5vh;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
     border-radius: 1vh;
   }
 
   .group-description {
-    bottom: 6.9vh;
-    font-size: 1.7vh;
+    bottom: 8.9vh;
+    font-size: 1.9vh;
     padding: 3px 0; 
     margin-bottom: .3vh;
+  }
+
+  .group-images {
+    gap: 0.9vh;
+  }
+  
+  .player-image-container {
+    left: 2vh;
+    width: 12.2vh;
+    height: 100%;
+    margin-bottom: -1.5vh;
+  }
+  
+  .guessed-player-image {
+    width: 70%;
+    height: 109%;
+    object-fit: cover;
+    border-radius: .625vh;
+  }
+  
+  .player-name-overlay {
+    bottom: -.8vh;
+    left: -3.0vh;
+    width: 14.0vh;
+    padding: .25vh 0;
+    font-size: 1.2vh;
+    font-weight: 550;
   }
   
   .results-popup {
