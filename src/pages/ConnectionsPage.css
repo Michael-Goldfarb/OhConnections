@@ -23,13 +23,13 @@
 
 .suggestions-link {
   display: block;
-  margin-top: 4vh; /* Adjust as needed for spacing */
-  margin-right: 2vh; /* To keep it towards the right; adjust based on layout */
+  margin-top: 4vh;
+  margin-right: 2vh;
   color: #007bff;
   font-size: 1.7vh;
   text-decoration: underline;
-  z-index: 1000; /* May not be needed depending on your layout */
-  align-self: flex-end; /* If its parent is a flex container */
+  z-index: 1000;
+  align-self: flex-end;
 }
 
 .suggestions-link:hover {
@@ -1320,7 +1320,7 @@ h1 {
   }
   
   .guessed-group-combined {
-    height: 12.69vh;
+    height: 100%;
     width: 100%;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
