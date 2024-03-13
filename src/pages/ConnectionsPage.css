@@ -1212,29 +1212,33 @@ h1 {
 @media (max-height: 800px) and (max-width: 600px) {
   
   .connections-game {
-    width: 50vh;
+    /* width: 50vh; */
     position: relative;
-    margin: 0 auto;
-    padding: 2.5380710659898478vh;
     text-align: center;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
   
   h1 {
     font-size: 2.445685279187817vh;
-    margin-top: .5380710659898478vh;
+    margin-top: -2.95380710659898478vh;
     width: 100%;
-    margin-bottom: 4.5380710659898478vh;
+    margin-bottom: 3.5380710659898478vh;
   }
   
   .terms-grid {
     gap: 1vh;
     margin-bottom: 2.9vh;
+    width: 100%;
   }
   
   .term-block {
     aspect-ratio: 1 / 1;
-    height: 10.7vh;
-    width: 10.7vh;
+    height: 12.69vh;
+    width: 12.69vh;
   }
   
   .term-block.selected {
