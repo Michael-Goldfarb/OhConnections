@@ -316,8 +316,6 @@ h1 {
   width: 25vh;
   box-sizing: border-box;
   font-size: 1.75vh;
-  margin-bottom: 5vh;
-  margin-bottom: 10.375vh;
 }
 
 .copy-summary-button {
@@ -494,7 +492,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 2vh;
   }
   
   .game-controls button {
@@ -659,7 +657,6 @@ h1 {
     box-sizing: border-box;
     font-size: 14px;
     margin-top: 40px;
-    margin-bottom: 100px;
   }
   
   .copy-summary-button {
@@ -769,7 +766,6 @@ h1 {
   }
   .game-button {
     margin-top: 60px;
-    margin-bottom: 130px;
   }
   .group-description {
     bottom: 6.225vh;
@@ -796,11 +792,9 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-left: 20px;
-    margin-bottom: 70px;
   }
   .game-button {
     margin-top: 60px;
-    margin-bottom: 140px;
   }
   .group-description {
     bottom: 6.025vh;
@@ -870,7 +864,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5380710659898478vh;
   }
   
   .game-controls button {
@@ -1045,8 +1038,6 @@ h1 {
     width: 28.694404591104735vh;
     box-sizing: border-box;
     font-size: 1.7vh;
-    margin-bottom: 5.738880918220947vh;
-    margin-bottom: 5.338880918220947vh;
   }
   
   .copy-summary-button {
@@ -1259,11 +1250,7 @@ h1 {
     font-size: 2.15vh;
     margin-bottom: 2.6vh; 
   }
-  
-  .game-controls {
-    margin-bottom: 2.5380710659898478vh;
-  }
-  
+
   .game-controls button {
     padding: 10px 20px;
     border-radius: 5px;
@@ -1328,7 +1315,6 @@ h1 {
     height: 5.738880918220947vh;
     width: 28.694404591104735vh;
     font-size: 1.7vh;
-    margin-bottom: 19.738880918220947vh;
   }
   
   .copy-summary-button {
