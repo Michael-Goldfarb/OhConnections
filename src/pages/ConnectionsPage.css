@@ -524,7 +524,7 @@ h1 {
     margin: 0 auto;
     padding:  5.2356020942408374vw;
     text-align: center;
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
   
   h1 {
@@ -2249,7 +2249,7 @@ h1 {
     width: 9.380710659898478vh;
     border-radius: 2.5380710659898478vh;;
     font-size: 1.0380710659898478vh;
-    margin-bottom: 100vh;
+    margin-bottom: 10vh;
   }
   
   .baseball-icon {
