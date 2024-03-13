@@ -1711,3 +1711,9 @@ h1 {
 
 
 
+
+@media (min-height: 600px) and (max-width: 380px) {
+  .results-popup {
+    left: -30.7vh;
+  }
+}
