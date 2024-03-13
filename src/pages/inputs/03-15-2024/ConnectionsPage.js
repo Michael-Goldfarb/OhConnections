@@ -443,7 +443,6 @@ const ConnectionsPage = () => {
   return (
     <div className="connections-game">
     <div className="header-container">
-      <div className="button-placeholder"></div>
       <h1>Create four groups of four!</h1>
     </div>
     {showPopup && <div className="popup-message">{popupMessage}</div>}

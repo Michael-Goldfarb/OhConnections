@@ -9,7 +9,7 @@ const ConnectionsPage = () => {
   const [cooldown, setCooldown] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [userWon, setUserWon] = useState(false);
