@@ -9,7 +9,7 @@ const ConnectionsPage = () => {
   const [cooldown, setCooldown] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [width] = useWindowSize();
+  const [width, height] = useWindowSize();
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
   const [userWon, setUserWon] = useState(false);
@@ -443,7 +443,6 @@ const ConnectionsPage = () => {
   return (
     <div className="connections-game">
     <div className="header-container">
-      <div className="button-placeholder"></div>
       <h1>Create four groups of four!</h1>
     </div>
     {showPopup && <div className="popup-message">{popupMessage}</div>}

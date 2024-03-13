@@ -828,15 +828,15 @@ h1 {
   }
   
   h1 {
-    font-size: 2.845685279187817vh;
-    margin-top: -2.5380710659898478vh;
+    font-size: 3.045685279187817vh;
+    margin-top: -4.5380710659898478vh;
     width: 100%;
-    margin-bottom: 2.5380710659898478vh;
+    margin-bottom: 1.8380710659898478vh;
   }
   
   .terms-grid {
     gap: 1vh;
-    margin-bottom: 1.2vh;
+    margin-bottom: 2.469vh;
   }
   
   .term-block {
@@ -863,7 +863,7 @@ h1 {
   .mistakes-section {
     text-align: center;
     font-size: 2.15vh;
-    margin-bottom: 1.2vh; 
+    margin-bottom: 1.9vh; 
   }
   
   .game-controls {
