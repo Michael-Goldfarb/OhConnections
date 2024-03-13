@@ -272,7 +272,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 9999;
 }
 
 .results-content {
@@ -612,7 +612,6 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
   }
   
   .results-content {
@@ -798,7 +797,7 @@ h1 {
     color: white;
     height: 10.30;
     right: 1.7vh;
-    width: 102.5%;
+    width: 109.5%;
     padding: 1vh;
     margin-bottom: 1vh;
     border-radius: .4vh;
@@ -859,7 +858,7 @@ h1 {
     color: white;
     height: 10.10;
     right: 2.45vh;
-    width: 102.5%;
+    width: 114.5%;
     padding: 1vh;
     margin-bottom: 1vh;
     border-radius: .4vh;
@@ -1076,7 +1075,6 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
   }
   
   .results-content {
@@ -1363,7 +1361,7 @@ h1 {
   
   .guessed-group-combined {
     height: 12.69vh;
-    width: 102.5%;
+    width: 106.5%;
     left: -1.5vh;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
@@ -1405,7 +1403,7 @@ h1 {
   }
   
   .results-popup {
-    left: -150px;
+    left: -185px;
     width: 100;
   }
   
