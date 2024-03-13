@@ -34,6 +34,14 @@ nav.bg-gray-800 {
   width: 20vh;
 }
 
+.hows-to-play-container {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%); 
+  z-index: 100;
+}
+
 .dropdown-container {
   position: absolute;
   right: 12px;
@@ -91,12 +99,401 @@ nav.bg-gray-800 {
   cursor: pointer;
 }
 
+.hows-to-play-button {
+    background-color: #0b5b98;
+    color: #ffffff;
+    padding: .7vh;
+    font-size: 1.59vh;
+    width: 13.5vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hows-to-play-content {
+  background: #fff;
+  color: #333;
+  padding: 2.5vh;
+  border-radius: 1vh;
+  box-shadow: 0 .5vh 1vh rgba(0, 0, 0, 0.1);
+  width: auto;
+  max-width: 75vh;
+}
+
+.hows-to-play-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.hows-to-play-content {
+  text-align: center;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6vh;
+}
+
+.hows-to-play-content p {
+  line-height: 3.5;
+  font-weight: 500;
+}
+
+.hows-to-play-content h1 {
+  margin-top: -1.25vh;
+  font-weight: bold;
+}
+
+.examples-section {
+  margin: 1.8vh 0;
+}
+
+.examples-group {
+  margin-bottom: 2.8vh;
+}
+
+.players-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25vh;
+}
+
+.players-images img {
+  width: 12.5vh;
+  height: auto;
+}
+
+.difficultys-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.difficultys-level {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1.25vh;
+}
+
+.difficultys-color {
+  width: 2.5vh;
+  height: 2.5vh;
+  margin-right: 1vh;
+}
+
+.difficultys-name {
+  font-size: 2vh;
+  min-width: 10vh;
+  font-weight: 500;
+  text-align: left;
+}
+
+.closes-button {
+  position: absolute;
+  top: 1.25vh;
+  right: 1.25vh;
+  color: black;
+  background: none;
+  border: none;
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+.hows-to-play-nav-button:hover {
+  background-color: #0056b3;
+}
+
+.hows-to-play-button:hover {
+  background-color: #555;
+}
+
 .dropdown-item:hover, .dropdown-item:focus {
   background-color: #f2f2f2;
   color: #444444;
   border-color: #cccccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+
+
+@media (max-width: 600) {
+  .hows-to-play-content {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 600px;
+  }
+  .hows-to-play-popup {
+    position: relative;
+    top: -680px;
+    left: -45px;
+    width: 130%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  
+  .hows-to-play-content {
+    text-align: center;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+  }
+  
+  .hows-to-play-content p {
+    line-height: 3.5;
+    font-weight: 500;
+  }
+  
+  .hows-to-play-content h1 {
+    margin-top: -10px;
+    font-weight: bold;
+  }
+  
+  .examples-section {
+    margin: 14px 0;
+  }
+  
+  .examples-group {
+    margin-bottom: 30px;
+  }
+  
+  .players-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .players-images img {
+    width: 50px;
+    height: auto;
+  }
+  .difficultys-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .difficultys-level {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px
+  }
+  
+  .difficultys-color {
+    width: 1.5vh;
+    height: 1.5vh;
+    margin-right: 1vh;
+  }
+  
+  .difficultys-name {
+    font-size: 1.2vh;
+    min-width: 10vh;
+    font-weight: 500;
+    text-align: left;
+  }
+  .closes-button {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    color: black;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+@media (max-height: 800px) and (min-width: 601px) {
+  .closes-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .difficultys-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .difficultys-level {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1vh;
+  }
+  
+  .difficultys-color {
+    width: 1.9vh;
+    height: 1.9vh;
+    margin-right: 8px;
+  }
+  
+  .difficultys-name {
+    font-size: 1.5vh;
+    min-width: 10.152284263959391vh;
+    font-weight: 500;
+    text-align: left;
+  }
+  .hows-to-play-content {
+    background: #fff;
+    color: #333;
+    padding: 1.7vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5vh;
+  }
+  .hows-to-play-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  
+  .hows-to-play-content p {
+    line-height: 3.5;
+    font-weight: 500;
+  }
+  
+  .hows-to-play-content h1 {
+    margin-top: -1vh;
+    font-weight: bold;
+  }
+  
+  .examples-section {
+    margin: 14px 0;
+  }
+  
+  .examples-group {
+    margin-bottom: 30px;
+  }
+  
+  .players-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+  }
+  
+  .players-images img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+@media (max-height: 500px) and (min-width: 601px) {
+.players-images img {
+  width: 10.2vh;
+}
+}
+
+@media (max-height: 800px) and (max-width: 600px) {
+  .difficultys-level {
+    margin-bottom: 1vh;
+  }
+  
+  .difficultys-color {
+    width: 1.9vh;
+    height: 1.9vh;
+  }
+  
+  .difficultys-name {
+    font-size: 1.5vh;
+    min-width: 10.152284263959391vh;
+  }
+  .hows-to-play-content {
+    padding: 1.7vh;
+    max-width: 600px;
+    font-size: 1.5vh;
+  }
+  .hows-to-play-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  
+  .hows-to-play-content p {
+    line-height: 3.5;
+    font-weight: 500;
+  }
+  
+  .hows-to-play-content h1 {
+    margin-top: -1vh;
+  }
+  
+  .examples-section {
+    margin: 14px 0;
+  }
+  
+  .examples-group {
+    margin-bottom: 30px;
+  }
+  
+  .players-images {
+    gap: 1vh;
+  }
+  
+  .players-images img {
+    width: 10.2vh;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 500px) {
@@ -115,5 +512,46 @@ nav.bg-gray-800 {
   
   .dropdown-item {
     padding: 8px 12px;
+  }
+  .hows-to-play-button {
+    padding: .8vh;
+    font-size: 1vh;
+    width: 9.0vh;
+  }
+  .hows-to-play-container {
+    right: 10px;
+  }
+}
+
+
+
+
+
+@media (max-width: 550px) and (min-width: 389px) {
+  .players-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25vh;
+  }
+  .players-images img {
+    width: 8.5vh;
+    height: auto;
+  }
+  .hows-to-play-content {
+    font-size: 1.1vh;
+  }
+  .difficultys-color {
+    width: 1.6vh;
+    height: 1.6vh;
+  }
+  .difficultys-name {
+    font-size: 1.3vh;
+  }
+}
+
+@media (max-width: 913px) and (min-width: 911px) {
+  .hows-to-play-content {
+    font-size: 1.5vh;
   }
 }

@@ -2,14 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../../ConnectionsPage.css';
 import { playerImages, initialTerms, correctGroups } from './gameData.js';
 import baseballImg from '../../../images/baseball.png';
-import mookieBetts from '../../../images/examples/mookiebetts.png';
-import maxMuncy from '../../../images/examples/maxmuncy.png';
-import joseAltuve from '../../../images/examples/josealtuve.png';
-import freddieFreeman from '../../../images/examples/freddiefreeman.png';
-import shoheiOhtani from '../../../images/examples/shoheiohtani.png';
-import ronaldAcunaJr from '../../../images/examples/ronaldacunajr.png';
-import miguelCabrera from '../../../images/examples/miguelcabrera.png';
-import salvadorPerez from '../../../images/examples/salvadorperez.png';
 
 const ConnectionsPage = () => {
   const gameSessionId = '03-19-2024';
@@ -20,19 +12,9 @@ const ConnectionsPage = () => {
   const [width, height] = useWindowSize();
   const [readyToShowPopUp, setReadyToShowPopUp] = useState(false);
   const [nextPuzzleCountdown, setNextPuzzleCountdown] = useState('');
-  const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [userWon, setUserWon] = useState(false);
   const [animateIndex, setAnimateIndex] = useState(null);
   const [shake, setShake] = useState(false);
-  // const [selectedTerms, setSelectedTerms] = useState([]);    
-  // const [moveHistory, setMoveHistory] = useState([]);
-  // const [gameOver, setGameOver] = useState(false);
-  // const [showResultsPopup, setShowResultsPopup] = useState(false);
-  // const [remainingGroupsToReveal, setRemainingGroupsToReveal] = useState([]);
-  // const [mistakes, setMistakes] = useState(4);
-  // const [submittedSets, setSubmittedSets] = useState([]);
-  // const [guessedGroups, setGuessedGroups] = useState([]);
-  // const [terms, setTerms] = useState(initialTerms);
   const [gameOver, setGameOver] = useState(() => {
     const saved = localStorage.getItem(`gameOver-${gameSessionId}`);
     return saved ? JSON.parse(saved) : false;
@@ -457,59 +439,12 @@ const ConnectionsPage = () => {
     });
   };
   
-  
-  const renderHowToPlayPopup = () => {
-    if (!showHowToPlay) return null;
-  
-    return (
-      <div className="how-to-play-popup" onClick={() => setShowHowToPlay(false)}>
-        <div className="how-to-play-content" onClick={e => e.stopPropagation()}>
-          <button className="close-button" onClick={() => setShowHowToPlay(false)}>X</button>
-          <h1>How to Play</h1>
-          <p>Goal: Find groups of four MLB players that have something in common</p>
-          <div className="example-section">
-            <p>Example:</p>
-            <div className="example-group">
-              <p>CURRENT DODGERS PLAYERS</p>
-              <div className="player-images">
-                <img src={freddieFreeman} alt="Freddie Freeman" />
-                <img src={mookieBetts} alt="Mookie Betts" />
-                <img src={shoheiOhtani} alt="Shohei Ohtani" />
-                <img src={maxMuncy} alt="Max Muncy" />
-            </div>
-            </div>
-            <div className="example-group">
-              <p>PLAYERS BORN IN VENEZUELA</p>
-              <div className="player-images">
-                <img src={joseAltuve} alt="Jose Altuve" />
-                <img src={ronaldAcunaJr} alt="Ronald Acuña Jr" />
-                <img src={miguelCabrera} alt="Miguel Cabrera" />
-                <img src={salvadorPerez} alt="Salvador Perez" />
-            </div>
-            </div>
-          </div>
-          <p>Select four similar players and tap 'Submit' to check if you are correct</p>
-          <p>You have four incorrect guesses before the game ends</p>
-          <p>Each group is represented by a color: </p>
-          <div className="difficulty-container">
-          {difficultyLevels.map(level => (
-            <div key={level.name} className="difficulty-level">
-              <span className="difficulty-color" style={{ backgroundColor: level.color }}></span>
-              <span className="difficulty-name">{level.name}</span>
-            </div>
-          ))}
-        </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="connections-game">
     <div className="header-container">
       <div className="button-placeholder"></div>
       <h1>Create four groups of four!</h1>
-      <button className="game-controls button how-to-play-button" onClick={() => setShowHowToPlay(true)}>How to Play</button>
     </div>
     {showPopup && <div className="popup-message">{popupMessage}</div>}
     <div className="guessed-groups">
@@ -591,7 +526,6 @@ const ConnectionsPage = () => {
       </div>
     )}
     {showResultsPopup && renderResultsPopup()}
-    {renderHowToPlayPopup()}
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScf3nrR79wVz0ZjBy6LaH18Xi9gH6RfwU8GMd3-O-luSJjB-Q/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" className="suggestions-link">Suggestions</a>
   </div>
 );
