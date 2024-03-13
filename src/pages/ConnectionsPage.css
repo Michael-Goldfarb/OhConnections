@@ -771,7 +771,6 @@ h1 {
   .guessed-group-combined {
     color: white;
     height: 10.30;
-    right: 1.7vh;
     width: 100%;
     padding: 1vh;
     margin-bottom: 1vh;
@@ -844,7 +843,6 @@ h1 {
   .guessed-group-combined {
     color: white;
     height: 10.10;
-    right: 2.45vh;
     width: 100%;
     padding: 1vh;
     margin-bottom: 1vh;
@@ -1324,7 +1322,6 @@ h1 {
   .guessed-group-combined {
     height: 12.69vh;
     width: 100%;
-    left: 0vh;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
     border-radius: 1vh;
