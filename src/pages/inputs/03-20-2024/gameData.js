@@ -51,22 +51,22 @@ export const playerImages = {
   export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
   
   export const correctGroups = [
-    { number: 5, 
+    { number: 6, 
         description: 'LAST NAME RODRIGUEZ', 
         terms: ['Grayson Rodriguez', 'Dereck Rodríguez', 'Eduardo Rodriguez', 'Joely Rodríguez'],  
         color: '#4CAF50' },
 
-    { number: 5,
+    { number: 6,
          description: 'RECENT AL ROOKIES OF THE YEAR', 
          terms: ['Kyle Lewis', 'Randy Arozarena', 'Julio Rodríguez', 'Gunnar Henderson'],  
          color: '#e5de00' },
 
-    { number: 5, 
+    { number: 6, 
         description: '#1 OVERALL PICKS', 
         terms: ['Dansby Swanson', 'Carlos Correa', 'Spencer Torkelson', 'Bryce Harper'], 
         color: '#e27602' },
     
-    { number: 5, 
+    { number: 6, 
         description: '40-40 SEASON', 
         terms: ['Jose Canseco', 'Barry Bonds', 'Alex Rodriguez', 'Alfonso Soriano'], 
         color: '#de0a26' }]
