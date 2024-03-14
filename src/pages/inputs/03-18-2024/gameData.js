@@ -67,7 +67,7 @@ export const playerImages = {
         color: '#e27602' },
     
     { number: 4, 
-        description: 'BROTHER PLAYED IN THE MLB', 
+        description: 'BROTHER PLAYS IN THE MLB', 
         terms: ['Edwin Díaz', 'Aaron Nola', 'Yuli Gurriel', 'Willson Contreras'], 
         color: '#de0a26' }]
   
