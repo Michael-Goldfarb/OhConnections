@@ -23,13 +23,13 @@
 
 .suggestions-link {
   display: block;
-  margin-top: 4vh;
-  margin-right: 2vh;
+  margin-top: 4vh; /* Adjust as needed for spacing */
+  margin-right: 2vh; /* To keep it towards the right; adjust based on layout */
   color: #007bff;
   font-size: 1.7vh;
   text-decoration: underline;
-  z-index: 1000;
-  align-self: flex-end;
+  z-index: 1000; /* May not be needed depending on your layout */
+  align-self: flex-end; /* If its parent is a flex container */
 }
 
 .suggestions-link:hover {
@@ -204,7 +204,7 @@ h1 {
   position: relative;
   color: white;
   height: 16.5vh;
-  width: 100%;
+  width: 101%;
   padding: 1.25vh;
   margin-bottom: 1.25vh;
   border-radius: .625vh;
@@ -548,7 +548,7 @@ h1 {
   .guessed-group-combined {
     color: white;
     height: 85px;
-    width: 100%;
+    width: 102%;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -745,7 +745,7 @@ h1 {
     margin-top: 1vh;
   }
   .group-description {
-    bottom: 6.625vh;
+    bottom: 7.625vh;
     font-size: 1.5vh;
   }
   .text-overlay {
@@ -770,8 +770,9 @@ h1 {
   }
   .guessed-group-combined {
     color: white;
-    height: 10.30;
-    width: 100%;
+    height: 11.30vh;
+    right: 1.7vh;
+    width: 109.5%;
     padding: 1vh;
     margin-bottom: 1vh;
     border-radius: .4vh;
@@ -827,7 +828,7 @@ h1 {
     width: 2.3vh;
   }
   .group-description {
-    bottom: 6.025vh;
+    bottom: 7.325vh;
     font-size: 1.5vh;
   }
   .terms-grid {
@@ -842,8 +843,9 @@ h1 {
   }
   .guessed-group-combined {
     color: white;
-    height: 10.10;
-    width: 100%;
+    height: 10.70vh;
+    right: 2.45vh;
+    width: 114.5%;
     padding: 1vh;
     margin-bottom: 1vh;
     border-radius: .4vh;
@@ -853,8 +855,8 @@ h1 {
     gap: 1vh;
   }
   .player-image-container {
-    width: 9vh;
-    height: 7vh;
+    width: 9.2vh;
+    height: 8.4vh;
     bottom: 1.1vh;
     margin-bottom: -2.1vh;
   }
@@ -995,7 +997,7 @@ h1 {
   .guessed-group-combined {
     color: white;
     height: 16vh;
-    width: 100%;
+    width: 102%;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
     border-radius: 1vh;
@@ -1255,7 +1257,7 @@ h1 {
     position: relative;
     text-align: center;
     width: 100vw;
-    max-width: 115%;
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     max-height: 100vh;
@@ -1320,34 +1322,35 @@ h1 {
   }
   
   .guessed-group-combined {
-    height: 100%;
-    width: 100%;
+    height: 13.69vh;
+    width: 106.5%;
+    left: -1.5vh;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
     border-radius: 1vh;
   }
 
   .group-description {
-    bottom: 8.9vh;
+    bottom: 9.9vh;
     font-size: 1.9vh;
     padding: 3px 0; 
     margin-bottom: .3vh;
   }
 
   .group-images {
-    gap: 0.9vh;
+    gap: 2.1vh;
   }
   
   .player-image-container {
-    left: 2vh;
-    width: 12.2vh;
-    height: 116%;
+    left: 1.5vh;
+    width: 10.2vh;
+    height: 100%;
     margin-bottom: -1.5vh;
   }
   
   .guessed-player-image {
     width: 80%;
-    height: 100%;
+    height: 105%;
     object-fit: cover;
     border-radius: .625vh;
   }
@@ -1357,7 +1360,7 @@ h1 {
     left: -3.0vh;
     width: 14.0vh;
     padding: .25vh 0;
-    font-size: 1.2vh;
+    font-size: 1.0vh;
     font-weight: 550;
   }
   
@@ -1428,8 +1431,8 @@ h1 {
   .connections-game {
     position: relative;
     text-align: center;
-    width: 100vw;
-    max-width: 100%;
+    /* width: 100vw;
+    max-width: 100%; */
     margin: 0 auto;
     box-sizing: border-box;
     overflow-x: auto;
