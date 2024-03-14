@@ -1456,4 +1456,7 @@ h1 {
     width: 100%;
     left: 0vh;
   }
+  .mistakes-section {
+    margin-top: -1vh; 
+  }
 }
