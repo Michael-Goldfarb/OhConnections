@@ -819,7 +819,7 @@ h1 {
     margin-left: 20px;
   }
   .game-button {
-    margin-top: 60px;
+    margin-top: -2vh;
   }
   .mistakes-section {
     font-size: 1.95vh;
@@ -833,7 +833,7 @@ h1 {
   }
   .terms-grid {
     gap: 1vh;
-    margin-bottom: 8.4vh;
+    margin-bottom: 5.4vh;
     width: 100%;
   }
   .term-block {
@@ -905,8 +905,8 @@ h1 {
   
   .term-block {
     aspect-ratio: 1 / 1;
-    height: 100%;
-    width: 100%;
+    height: 16vh;
+    width: 16vh;
   }
 
   .text-overlay {
@@ -997,7 +997,7 @@ h1 {
   .guessed-group-combined {
     color: white;
     height: 16vh;
-    width: 102%;
+    width: 100%;
     padding: 2.1413276231263385vh;
     margin-bottom: 1.1413276231263385vh;
     border-radius: 1vh;
