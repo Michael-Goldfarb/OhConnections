@@ -882,7 +882,11 @@ h1 {
 
 
 
-
+@media (max-height: 500px) {
+  .mistakes-section {
+    margin-top: 8vh;
+  }
+}
 
 
 
