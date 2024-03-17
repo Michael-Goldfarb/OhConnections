@@ -1,38 +1,38 @@
-import juricksonProfar from './juricksonprofar.png';
-import jonathanSchoop from './jonathanschoop.png';
-import michaelConforto from './michaelconforto.png';
-import codyBellinger from './codybellinger.png';
-import lukeVoit from './lukevoit.png';
-import djLemahieu from './djlemahieu.png';
-import gleyberTorres from './gleybertorres.png';
-import gioUrshela from './giourshela.png';
-import liamHendriks from './liamhendriks.png';
-import treyMancini from './treymancini.png';
-import justinVerlander from './justinverlander.png';
-import carlosCarrasco from './carloscarrasco.png';
-import luisArraez from './luisarraez.png';
-import whitMerrifield from './whitmerrifield.png';
-import freddieFreeman from '../../../images/examples/freddiefreeman.png';
-import ronaldAcunaJr from './ronaldacunajr.png';
+import jakeArrieta from './jakearrieta.png';
+import maxScherzer from './maxscherzer.png';
+import mikeFiers from './mikefiers.png';
+import coleHamels from './colehamels.png';
+import miguelSano from './miguelsano.png';
+import aaronJudge from './aaronJudge.png';
+import garySanchez from './garysanchez.png';
+import justinBour from './justinbour.png';
+import krisBryant from './krisbryant.png';
+import giancarloStanton from './giancarlostanton.png';
+import joseAbreu from './joseabreu.png';
+import mookieBetts from './mookiebetts.png';
+import claytonKershaw from './claytonkershaw.png';
+import anthonyRizzo from './anthonyrizzo.png';
+import javyBaez from './javybaez.png';
+import kyleSchwarber from './kyleschwarber.png';
 
 
 export const playerImages = {
-    'Jurickson Profar': juricksonProfar,
-    'Jonathan Schoop': jonathanSchoop,
-    'Michael Conforto': michaelConforto, 
-    'Cody Bellinger': codyBellinger, 
-    'Luke Voit': lukeVoit, 
-    'DJ LeMahieu': djLemahieu, 
-    'Gleyber Torres': gleyberTorres, 
-    'Gio Urshela': gioUrshela, 
-    'Carlos Carrasco': carlosCarrasco, 
-    'Justin Verlander': justinVerlander, 
-    'Trey Mancini': treyMancini, 
-    'Liam Hendriks': liamHendriks, 
-    'Whit Merrifield': whitMerrifield, 
-    'Luis Arraez': luisArraez, 
-    'Freddie Freeman': freddieFreeman, 
-    'Ronald Acuña Jr.': ronaldAcunaJr
+    'Jake Arrieta': jakeArrieta,
+    'Max Scherzer': maxScherzer,
+    'Mike Fiers': mikeFiers, 
+   'Cole Hamels': coleHamels, 
+   'Clayton Kershaw': claytonKershaw, 
+   'Miguel Sanó': miguelSano, 
+   'Aaron Judge': aaronJudge, 
+   'Gary Sánchez': garySanchez, 
+   'Justin Bour': justinBour, 
+   'Kris Bryant': krisBryant, 
+   'Giancarlo Stanton': giancarloStanton, 
+   'Jose Abreu': joseAbreu, 
+   'Mookie Betts': mookieBetts, 
+   'Anthony Rizzo': anthonyRizzo, 
+   'Javy Baez': javyBaez, 
+   'Kyle Schwarber': kyleSchwarber
   };
 
 
@@ -47,28 +47,28 @@ export const playerImages = {
     return array;
   };   
 
-  const initialTermsUnshuffled = ['Jurickson Profar', 'Jonathan Schoop', 'Michael Conforto', 'Cody Bellinger', 'Carlos Carrasco', 'Liam Hendriks', 'Justin Verlander', 'Trey Mancini', 'Whit Merrifield', 'Luis Arraez', 'Freddie Freeman', 'Ronald Acuña Jr.', 'DJ LeMahieu', 'Gio Urshela', 'Luke Voit', 'Gleyber Torres'];
+  const initialTermsUnshuffled = ['Max Scherzer', 'Mike Fiers', 'Cole Hamels', 'Clayton Kershaw', 'Miguel Sanó', 'Aaron Judge', 'Gary Sánchez', 'Justin Bour', 'Kris Bryant', 'Giancarlo Stanton', 'Jose Abreu', 'Mookie Betts', 'Anthony Rizzo', 'Javy Baez', 'Kyle Schwarber', 'Jake Arrieta'];
   export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
-
+  
   export const correctGroups = [
     { number: 3, 
-        description: '2021 YANKEES INFIELDERS', 
-        terms: ['Luke Voit', 'DJ LeMahieu', 'Gleyber Torres', 'Gio Urshela'],  
+        description: '2015 CUBS', 
+        terms: ['Anthony Rizzo', 'Javy Baez', 'Kyle Schwarber', 'Jake Arrieta'],  
         color: '#4CAF50' },
 
     { number: 3,
-         description: 'RECENT 200+ HITS IN A SEASON', 
-         terms: ['Ronald Acuña Jr.', 'Luis Arraez', 'Freddie Freeman', 'Whit Merrifield'],  
+         description: 'MVPS NOW ON DIFFERENT TEAMS', 
+         terms: ['Kris Bryant', 'Giancarlo Stanton', 'Jose Abreu', 'Mookie Betts'],  
          color: '#e5de00' },
 
     { number: 3, 
-        description: 'RECENT AL COMEBACK PLAYERS OF THE YEAR', 
-        terms: ['Liam Hendriks', 'Trey Mancini', 'Justin Verlander', 'Carlos Carrasco'], 
+        description: '2017 HR DERBY CONTESTANTS', 
+        terms: ['Miguel Sanó', 'Aaron Judge', 'Gary Sánchez', 'Justin Bour'], 
         color: '#e27602' },
     
     { number: 3, 
-        description: 'PLAYED IN THE LITTLE LEAGUE WORLD SERIES', 
-        terms: ['Michael Conforto', 'Cody Bellinger', 'Jonathan Schoop', 'Jurickson Profar'], 
+        description: '2014 / 2015 NO HITTERS', 
+        terms: ['Max Scherzer', 'Mike Fiers', 'Cole Hamels', 'Clayton Kershaw'], 
         color: '#de0a26' }]
   
   
