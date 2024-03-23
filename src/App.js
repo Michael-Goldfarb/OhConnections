@@ -28,7 +28,7 @@ function App() {
       <Router>
         <Navbar /> 
         <Routes>
-          <Route path="/" element={<Connections03222024 />} />
+          <Route path="/" element={<Connections03232024 />} />
           <Route path="/03-15-2024" element={<Connections03152024 />} /> 
           <Route path="/03-16-2024" element={<Connections03162024 />} />
           <Route path="/03-17-2024" element={<Connections03172024 />} />
@@ -36,8 +36,8 @@ function App() {
           <Route path="/03-19-2024" element={<Connections03192024 />} />
           <Route path="/03-20-2024" element={<Connections03202024 />} />
           <Route path="/03-21-2024" element={<Connections03212024 />} />
-       {/*   <Route path="/03-22-2024" element={<Connections03222024 />} /> 
-          <Route path="/03-23-2024" element={<Connections03232024 />} />
+          <Route path="/03-22-2024" element={<Connections03222024 />} /> 
+        {/*  <Route path="/03-23-2024" element={<Connections03232024 />} />
           <Route path="/03-24-2024" element={<Connections03242024 />} /> */}
         </Routes>
       </Router>
