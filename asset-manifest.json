@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7e003ae0.css",
-    "main.js": "/static/js/main.93f5b784.js",
+    "main.js": "/static/js/main.90450d75.js",
     "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
     "static/media/baseball.png": "/static/media/baseball.dc4c55253f2f14e78414.png",
     "static/media/roycelewis.png": "/static/media/roycelewis.7d851a1b07733afb4a88.png",
@@ -23,8 +23,8 @@
     "static/media/edwindiaz.png": "/static/media/edwindiaz.86082879b27af036b02b.png",
     "static/media/juansoto.png": "/static/media/juansoto.58d70f85b3c25f59c4d3.png",
     "static/media/chrisarcher.png": "/static/media/chrisarcher.e5b2155f9b78e701919f.png",
+    "static/media/fernando.png": "/static/media/fernando.b9bddd09606ead1cb02b.png",
     "static/media/fernandoTatisJr.png": "/static/media/fernandoTatisJr.b9bddd09606ead1cb02b.png",
-    "static/media/fernandotatisjr.png": "/static/media/fernandotatisjr.b9bddd09606ead1cb02b.png",
     "static/media/derekjeter.png": "/static/media/derekjeter.b390416ebb278f885cf8.png",
     "static/media/garysanchez.png": "/static/media/garysanchez.9e3825be844e2ebe4fa2.png",
     "static/media/aaronnola.png": "/static/media/aaronnola.b0cc2481dee7d219ecd2.png",
@@ -167,11 +167,11 @@
     "static/media/niekro1.png": "/static/media/niekro1.3e2de5d14890a8d77e99.png",
     "index.html": "/index.html",
     "main.7e003ae0.css.map": "/static/css/main.7e003ae0.css.map",
-    "main.93f5b784.js.map": "/static/js/main.93f5b784.js.map",
+    "main.90450d75.js.map": "/static/js/main.90450d75.js.map",
     "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e003ae0.css",
-    "static/js/main.93f5b784.js"
+    "static/js/main.90450d75.js"
   ]
 }
