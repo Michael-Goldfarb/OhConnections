@@ -51,22 +51,22 @@ export const playerImages = {
   export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
 
   export const correctGroups = [
-    { number: 3, 
+    { number: 10, 
         description: '2021 YANKEES INFIELDERS', 
         terms: ['Luke Voit', 'DJ LeMahieu', 'Gleyber Torres', 'Gio Urshela'],  
         color: '#4CAF50' },
 
-    { number: 3,
+    { number: 10,
          description: 'RECENT 200+ HITS IN A SEASON', 
          terms: ['Ronald Acuña Jr.', 'Luis Arraez', 'Freddie Freeman', 'Whit Merrifield'],  
          color: '#e5de00' },
 
-    { number: 3, 
+    { number: 10, 
         description: 'RECENT AL COMEBACK PLAYERS OF THE YEAR', 
         terms: ['Liam Hendriks', 'Trey Mancini', 'Justin Verlander', 'Carlos Carrasco'], 
         color: '#e27602' },
     
-    { number: 3, 
+    { number: 10, 
         description: 'PLAYED IN THE LITTLE LEAGUE WORLD SERIES', 
         terms: ['Michael Conforto', 'Cody Bellinger', 'Jonathan Schoop', 'Jurickson Profar'], 
         color: '#de0a26' }]
