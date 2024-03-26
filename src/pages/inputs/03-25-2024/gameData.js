@@ -10,7 +10,7 @@ import maxKepler from './maxkepler.png';
 import byronBuxton from './byronbuxton.png';
 import carlosCorrea from './carloscorrea.png';
 import royceLewis from './roycelewis.png';
-import fernandoTatisJr from './fernandotatisjr.png';
+import fernandoTatisJr from './fernando.png';
 import mannyMachado from './mannymachado.png';
 import yuDarvish from './yudarvish.png';
 import jakeCronenworth from './jakecronenworth.png';
@@ -51,22 +51,22 @@ export const playerImages = {
   export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
 
   export const correctGroups = [
-    { number: 3, 
+    { number: 11, 
         description: 'CURRENT PADRES', 
         terms: ['Fernando Tatis Jr.', 'Manny Machado', 'Yu Darvish', 'Jake Cronenworth'],  
         color: '#4CAF50' },
 
-    { number: 3,
+    { number: 11,
          description: 'CURRENT TWINS', 
          terms: ['Max Kepler', 'Byron Buxton', 'Carlos Correa', 'Royce Lewis'],  
          color: '#e5de00' },
 
-    { number: 3, 
+    { number: 11, 
         description: 'CURRENT GIANTS', 
         terms: ['Blake Snell', 'Jorge Soler', 'Michael Conforto', 'Matt Chapman'], 
         color: '#e27602' },
     
-    { number: 3, 
+    { number: 11, 
         description: 'CURRENT NATIONALS', 
         terms: ['Joey Gallo', 'Jesse Winker', 'Eddie Rosario', 'Matt Barnes'], 
         color: '#de0a26' }]
