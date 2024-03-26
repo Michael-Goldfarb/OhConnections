@@ -11,6 +11,8 @@ import Connections03222024 from "./pages/inputs/03-22-2024/ConnectionsPage.js";
 import Connections03232024 from "./pages/inputs/03-23-2024/ConnectionsPage.js";
 import Connections03242024 from "./pages/inputs/03-24-2024/ConnectionsPage.js";
 import Connections03252024 from "./pages/inputs/03-25-2024/ConnectionsPage.js";
+import Connections03262024 from "./pages/inputs/03-26-2024/ConnectionsPage.js";
+import Connections03272024 from "./pages/inputs/03-27-2024/ConnectionsPage.js";
 import Navbar from "./pages/components/NavBar.js";
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
       <Router>
         <Navbar /> 
         <Routes>
-          <Route path="/" element={<Connections03252024 />} />
+          <Route path="/" element={<Connections03262024 />} />
           <Route path="/03-15-2024" element={<Connections03152024 />} /> 
           <Route path="/03-16-2024" element={<Connections03162024 />} />
           <Route path="/03-17-2024" element={<Connections03172024 />} />
@@ -40,6 +42,7 @@ function App() {
           <Route path="/03-22-2024" element={<Connections03222024 />} /> 
           <Route path="/03-23-2024" element={<Connections03232024 />} />
           <Route path="/03-24-2024" element={<Connections03242024 />} />
+          <Route path="/03-25-2024" element={<Connections03252024 />} />
         </Routes>
       </Router>
     </div>
