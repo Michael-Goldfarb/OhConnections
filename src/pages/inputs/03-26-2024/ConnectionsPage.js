@@ -4,7 +4,7 @@ import { playerImages, initialTerms, correctGroups } from './gameData.js';
 import baseballImg from '../../../images/baseball.png';
 
 const ConnectionsPage = () => {
-  const gameSessionId = '03-27-2024';
+  const gameSessionId = '03-26-2024';
 
   const [cooldown, setCooldown] = useState(false);
   const [guessIncorrect, setGuessIncorrect] = useState(false);

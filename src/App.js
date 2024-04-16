@@ -12,7 +12,7 @@ import Connections03232024 from "./pages/inputs/03-23-2024/ConnectionsPage.js";
 import Connections03242024 from "./pages/inputs/03-24-2024/ConnectionsPage.js";
 import Connections03252024 from "./pages/inputs/03-25-2024/ConnectionsPage.js";
 import Connections03262024 from "./pages/inputs/03-26-2024/ConnectionsPage.js";
-import Connections03272024 from "./pages/inputs/03-27-2024/ConnectionsPage.js";
+// import Connections03272024 from "./pages/inputs/03-27-2024/ConnectionsPage.js";
 import Navbar from "./pages/components/NavBar.js";
 
 function App() {
