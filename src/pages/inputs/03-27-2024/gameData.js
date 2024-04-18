@@ -1,38 +1,38 @@
-import bobbyWittJr from './bobbywittjr.png';
-import corbinCarroll from './corbincarroll.png';
-import ronaldAcunaJr from './ronaldacunajr.png';
-import esteuryRuiz from './esteuryruiz.png';
-import jordanMontgomery from './jordanmontgomery.png';
-import blakeSnell from './blakesnell.png';
-import codyBellinger from './codybellinger.png';
-import mattChapman from './mattchapman.png';
-import alexBregman from './alexbregman.png';
-import djLemahieu from './djlemahieu.png';
-import aaronNola from './aaronnola.png';
-import paulSkenes from './paulskenes.png';
-import jtRealmuto from './jtrealmuto.png';
-import willSmith from './willsmith.png';
-import adleyRutschman from './adleyrutschman.png';
-import seanMurphy from './seanmurphy.png';
+import claytonKershaw from './claytonkershaw.png';
+import chrisSale from './chrissale.png';
+import hyunjinRyu from './hyunjinryu.png';
+import madisonBumgarner from './madisonbumgarner.png';
+import nolanArenado from './nolanArenado.png';
+import yadierMolina from './yadiermolina.png';
+import mookieBetts from './mookiebetts.png';
+import nickAhmed from './nickahmed.png';
+import georgeSpringer from './georgespringer.png';
+import treaTurner from './treaturner.png';
+import brockHolt from './brockholt.png';
+import christianYelich from './christianYelich.png';
+import albertPujols from './albertPujols.png';
+import jimmyRollins from './jimmyrollins.png';
+import barryBonds from './barryBonds.jpg';
+import ryanHoward from './ryanhoward.png';
 
 
 export const playerImages = {
-  'Blake Snell': blakeSnell, 
-  'Cody Bellinger': codyBellinger,
-  'Matt Chapman': mattChapman, 
-  'Jordan Montgomery': jordanMontgomery,
-  'Esteury Ruiz': esteuryRuiz, 
-  'Ronald Acuna Jr.': ronaldAcunaJr, 
-  'Corbin Carroll': corbinCarroll, 
-  'Bobby Witt Jr.': bobbyWittJr, 
-  'Alex Bregman': alexBregman, 
-  'DJ Lemahieu': djLemahieu, 
-  'Aaron Nola': aaronNola, 
-  'Paul Skenes': paulSkenes, 
-  'JT Realmuto': jtRealmuto, 
-  'Will Smith': willSmith, 
-  'Adley Rutschman': adleyRutschman, 
-  'Sean Murphy': seanMurphy
+  'Clayton Kershaw': claytonKershaw, 
+  'Chris Sale': chrisSale,
+  'Hyun-jin Ryu': hyunjinRyu, 
+  'Madison Bumgarner': madisonBumgarner,
+  'Nolan Arenado': nolanArenado, 
+  'Yadier Molina': yadierMolina, 
+  'Mookie Betts': mookieBetts, 
+  'Nick Ahmed': nickAhmed, 
+  'George Springer': georgeSpringer, 
+  'Trea Turner': treaTurner, 
+  'Brock Holt': brockHolt, 
+  'Christian Yelich': christianYelich, 
+  'Albert Pujols': albertPujols, 
+  'Jimmy Rollins': jimmyRollins, 
+  'Barry Bonds': barryBonds, 
+  'Ryan Howard': ryanHoward
   };
 
 
@@ -47,28 +47,28 @@ export const playerImages = {
     return array;
   };   
 
-  const initialTermsUnshuffled = [];
+  const initialTermsUnshuffled = ['Clayton Kershaw', 'Chris Sale', 'Hyun-jin Ryu', 'Madison Bumgarner', 'Nolan Arenado', 'Yadier Molina', 'Mookie Betts', 'Nick Ahmed', 'George Springer', 'Trea Turner', 'Brock Holt', 'Christian Yelich', 'Albert Pujols', 'Jimmy Rollins', 'Barry Bonds', 'Ryan Howard'];
   export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
 
   export const correctGroups = [
     { number: 13, 
-        description: '', 
-        terms: [''],  
+        description: 'ACTIVE LEFT-HANDED PITCHERS', 
+        terms: ['Clayton Kershaw', 'Chris Sale', 'Hyun-jin Ryu', 'Madison Bumgarner'],  
         color: '#4CAF50' },
 
     { number: 13,
-         description: '', 
-         terms: [''],  
+         description: 'MULTIPLE GOLD GLOVES SINCE 2010', 
+         terms: ['Nolan Arenado', 'Yadier Molina', 'Mookie Betts', 'Nick Ahmed'],  
          color: '#e5de00' },
 
     { number: 13, 
-        description: '', 
-        terms: [''], 
+        description: 'HAVE HIT FOR THE CYCLE', 
+        terms: ['George Springer', 'Trea Turner', 'Brock Holt', 'Christian Yelich'], 
         color: '#e27602' },
     
     { number: 13, 
-        description: '', 
-        terms: [''], 
+        description: 'NL MVPS FROM THE 2000S', 
+        terms: ['Albert Pujols', 'Jimmy Rollins', 'Barry Bonds', 'Ryan Howard'], 
         color: '#de0a26' }]
   
   
