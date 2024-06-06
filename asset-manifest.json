@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7e003ae0.css",
-    "main.js": "/static/js/main.154f8b67.js",
+    "main.js": "/static/js/main.86a251a9.js",
     "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
     "static/media/baseball.png": "/static/media/baseball.dc4c55253f2f14e78414.png",
     "static/media/roycelewis.png": "/static/media/roycelewis.7d851a1b07733afb4a88.png",
@@ -60,7 +60,7 @@
     "static/media/gregmaddux.png": "/static/media/gregmaddux.01f15e1ea3a7eadd6070.png",
     "static/media/justinverlander.png": "/static/media/justinverlander.fb6aada4fc0a1cf04926.png",
     "static/media/bobbywittjr.png": "/static/media/bobbywittjr.19e334605ab704437755.png",
-    "static/media/madisonbumgarner.png": "/static/media/madisonbumgarner.0646cfab04e1e477a3e0.png",
+    "static/media/georgespringer.png": "/static/media/georgespringer.0646cfab04e1e477a3e0.png",
     "static/media/blakesnell.png": "/static/media/blakesnell.dc2689f94c9966af1a27.png",
     "static/media/carloscarrasco.png": "/static/media/carloscarrasco.1a0473f2ccc2489d5691.png",
     "static/media/jackierobinson.png": "/static/media/jackierobinson.b28373655bf415c86f21.png",
@@ -148,7 +148,7 @@
     "static/media/jonlester.png": "/static/media/jonlester.39689ce9baa278d5a1a9.png",
     "static/media/javybaez.png": "/static/media/javybaez.abee06bfce6eebe7b4f1.png",
     "static/media/adleyrutschman.png": "/static/media/adleyrutschman.61b697e2ea7c54b079af.png",
-    "static/media/georgespringer.png": "/static/media/georgespringer.f39bdc7892c964e11177.png",
+    "static/media/madisonbumgarner.png": "/static/media/madisonbumgarner.f39bdc7892c964e11177.png",
     "static/media/coreyseager.png": "/static/media/coreyseager.a7d69e6f6e9ac677eae6.png",
     "static/media/jorgesoler.png": "/static/media/jorgesoler.4ab90d1e851d0646ad45.png",
     "static/media/claytonkershaw.png": "/static/media/claytonkershaw.de744a8d6bca4b6a28d2.png",
@@ -194,11 +194,11 @@
     "static/media/niekro1.png": "/static/media/niekro1.3e2de5d14890a8d77e99.png",
     "index.html": "/index.html",
     "main.7e003ae0.css.map": "/static/css/main.7e003ae0.css.map",
-    "main.154f8b67.js.map": "/static/js/main.154f8b67.js.map",
+    "main.86a251a9.js.map": "/static/js/main.86a251a9.js.map",
     "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e003ae0.css",
-    "static/js/main.154f8b67.js"
+    "static/js/main.86a251a9.js"
   ]
 }
