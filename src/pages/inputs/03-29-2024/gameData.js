@@ -50,22 +50,22 @@ export const initialTerms = shuffleArray([...initialTermsUnshuffled]);
 
 export const correctGroups = [
   { number: 15, 
-    description: 'PLAYERS WITH 50+ HOME RUNS IN A SEASON', 
-    terms: ['Giancarlo Stanton', 'Prince Fielder', 'Jose Bautista', 'Mark McGwire'],  
+    description: 'MLB MANAGERS WHO WERE FORMER CATCHERS', 
+    terms: ['Mike Matheny', 'Bruce Bochy', 'Joe Girardi', 'Craig Counsell'],
     color: '#4CAF50' },
 
   { number: 15,
-    description: 'PLAYERS WHO\'VE PLAYED FOR BOTH CHICAGO TEAMS', 
-    terms: ['Sammy Sosa', 'George Bell', 'Ken Griffey Jr.', 'Jim Thome'],  
+    description: 'MLB PLAYERS WHO PLAYED IN THE NPB', 
+    terms: ['Cecil Fielder', 'Ryan Vogelsong', 'Colby Lewis', 'Miles Mikolas'],  
     color: '#e5de00' },
 
   { number: 15, 
-    description: 'MLB PLAYERS WHO PLAYED IN THE NPB', 
-    terms: ['Cecil Fielder', 'Ryan Vogelsong', 'Colby Lewis', 'Miles Mikolas'], 
+    description: 'PLAYERS WITH 50+ HOME RUNS IN A SEASON', 
+    terms: ['Giancarlo Stanton', 'Prince Fielder', 'Jose Bautista', 'Mark McGwire'],
     color: '#e27602' },
   
   { number: 15, 
-    description: 'MLB MANAGERS WHO WERE FORMER CATCHERS', 
-    terms: ['Mike Matheny', 'Bruce Bochy', 'Joe Girardi', 'Craig Counsell'], 
+    description: 'PLAYERS WHO\'VE PLAYED FOR BOTH CHICAGO TEAMS', 
+    terms: ['Sammy Sosa', 'George Bell', 'Ken Griffey Jr.', 'Jim Thome'],   
     color: '#de0a26' }
 ];

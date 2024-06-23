@@ -99,8 +99,8 @@ function NavBar() {
         <button onClick={toggleDropdown} className="dropdown-button">Previous Grids</button>
           {isDropdownOpen && (
             <div className="dropdown-menu">
-              <div className="dropdown-item" onClick={() => navigate('/')}>#14</div>
-              {['13', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'].map((item, index) => (
+              <div className="dropdown-item" onClick={() => navigate('/')}>#15</div>
+              {['14', '13', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'].map((item, index) => (
                 <div key={index} className="dropdown-item" onClick={() => navigate(`/${item}`)}>#{item}</div>
               ))}
             </div>
