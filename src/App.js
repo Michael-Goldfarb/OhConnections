@@ -33,22 +33,23 @@ function App() {
       <Router>
         <Navbar /> 
         <Routes>
+        '04-30', '04-23', '04-16', '04-09', '04-02', '03-26
           <Route path="/" element={<Connections03292024 />} />
-          <Route path="/1" element={<Connections03152024 />} /> 
-          <Route path="/2" element={<Connections03162024 />} />
-          <Route path="/3" element={<Connections03172024 />} />
-          <Route path="/4" element={<Connections03182024 />} />
-          <Route path="/5" element={<Connections03192024 />} />
-          <Route path="/6" element={<Connections03202024 />} />
-          <Route path="/7" element={<Connections03212024 />} />
-          <Route path="/8" element={<Connections03222024 />} /> 
-          <Route path="/9" element={<Connections03232024 />} />
-          <Route path="/10" element={<Connections03242024 />} />
-          <Route path="/11" element={<Connections03252024 />} />
-          <Route path="/12" element={<Connections03262024 />} />
-          <Route path="/13" element={<Connections03272024 />} />
-          <Route path="/14" element={<Connections03282024 />} />
-          <Route path="/15" element={<Connections03292024 />} />
+          <Route path="/03-19" element={<Connections03152024 />} /> 
+          <Route path="/03-26" element={<Connections03162024 />} />
+          <Route path="/04-02" element={<Connections03172024 />} />
+          <Route path="/04-09" element={<Connections03182024 />} />
+          <Route path="/04-16" element={<Connections03192024 />} />
+          <Route path="/04-23" element={<Connections03202024 />} />
+          <Route path="/04-30" element={<Connections03212024 />} />
+          <Route path="/05-07" element={<Connections03222024 />} /> 
+          <Route path="/05-14" element={<Connections03232024 />} />
+          <Route path="/05-21" element={<Connections03242024 />} />
+          <Route path="/05-28" element={<Connections03252024 />} />
+          <Route path="/06-04" element={<Connections03262024 />} />
+          <Route path="/06-11" element={<Connections03272024 />} />
+          <Route path="/06-18" element={<Connections03282024 />} />
+          <Route path="/06-25" element={<Connections03292024 />} />
         </Routes>
       </Router>
     </div>
