@@ -24,18 +24,139 @@
   animation: jump 0.5s ease;
 }
 
-.suggestions-link {
-  display: block;
-  margin-top: 4vh; /* Adjust as needed for spacing */
-  margin-right: 2vh; /* To keep it towards the right; adjust based on layout */
-  color: #007bff;
-  font-size: 1.7vh;
-  text-decoration: underline;
-  z-index: 1000; /* May not be needed depending on your layout */
-  align-self: flex-end; /* If its parent is a flex container */
+.stats-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.suggestions-link:hover {
+.averages-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.stats-content {
+  background: white;
+  color: black;
+  padding: 2.5vh;
+  border-radius: 1.5vh;
+  text-align: center;
+  position: relative;
+  width: 50vh;
+}
+
+.averages-content {
+  background: white;
+  color: black;
+  padding: 2.5vh;
+  border-radius: 1.5vh;
+  text-align: center;
+  position: relative;
+  width: 60vh;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+}
+
+.stats-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stats-value {
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+.averages-value {
+  font-size: 3.5vh;
+  font-weight: bold;
+}
+
+.stats-label {
+  margin-top: 1vh;
+  font-size: 2.6vh;
+}
+
+.stats-header {
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 2.5vh;
+}
+
+.stats-button, .averages-button {
+  padding: .8vh 1.7vh;
+  font-size: 1em;
+  color: white;
+  background-color: #0b5b98;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: .5vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.stats-button {
+  right: 1vh;
+}
+
+.averages-button {
+  left: 1vh;
+  padding: .6vh 1.0vh;
+}
+
+.stats-button:hover, .averages-button:hover {
+  background-color: #0056b3;
+}
+
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+}
+
+.suggestions-link, .instagram-link, .tiktok-link {
+  margin: 0 1vh;
+  text-decoration: none;
+  color: #000000;
+  font-size: 2vh;
+  display: flex;
+  align-items: center;
+}
+
+.instagram-link svg, .tiktok-link svg {
+  margin-left: .5vh;
+}
+
+.image-attribution {
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 1.5vh;
+  color: #888;
+}
+
+
+.suggestions-link:hover, .instagram-link:hover, .tiktok-link:hover {
   text-decoration: underline;
 }
 
