@@ -633,7 +633,7 @@ const renderAveragesPopup = () => {
     {showAveragesPopup && renderAveragesPopup()}
     <div className="footer-links">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScf3nrR79wVz0ZjBy6LaH18Xi9gH6RfwU8GMd3-O-luSJjB-Q/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" className="suggestions-link">Suggestions</a>
-        <a href="https://www.instagram.com/ohconnections" target="_blank" rel="noopener noreferrer" className="instagram-link">
+        <a href="https://www.instagram.com/ohconnectionsgame" target="_blank" rel="noopener noreferrer" className="instagram-link">
           <FontAwesomeIcon icon={faInstagram} size="2x" />
         </a>
         <a href="https://www.tiktok.com/@mlbgamepredictor" target="_blank" rel="noopener noreferrer" className="tiktok-link">
